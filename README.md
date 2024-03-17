@@ -1,4 +1,4 @@
-# Time_Off_App
+# TimeOff_App
 When are my coworkers going on vacation?
 
 In big companies, figuring out when to take a vacation can get tricky since you have to work around everyone else's time off. Spreadsheets can help do the job, but honestly, they're not the best at giving you a clear picture of who's off when.
