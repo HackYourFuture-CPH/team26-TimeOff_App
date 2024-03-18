@@ -1,10 +1,10 @@
 import './App.css';
+import TeamForm from './component/TeamForm';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-      </header>
+      <TeamForm/>
     </div>
   );
 }
