@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 const teamsDatabase = [
   { id: 1, name: 'Team A', code: 'ABC123' },
