@@ -1,10 +1,11 @@
 import './App.css';
-import TeamForm from './component/TeamForm';
+import Main from './pages/main';
+
 
 function App() {
   return (
     <div className="App">
-      <TeamForm/>
+      <Main/>
     </div>
   );
 }
