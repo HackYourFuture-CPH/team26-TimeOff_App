@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import SubmitTeam from '../component/SubmitTeam';
 import CreateTeam from '../component/CreateTeam';
+import '../index.css';
 
 // Define la base de datos externa
 const database = [
