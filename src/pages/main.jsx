@@ -15,7 +15,7 @@ const Main = () => {
   const [teamsDatabase, setTeamsDatabase] = useState(database);
 
   return (
-    <div>
+    <div className="top-Header">
       <h2>Time Off</h2>
       <SubmitTeam teamCode={teamCode} teamsDatabase={teamsDatabase} />
       <CreateTeam

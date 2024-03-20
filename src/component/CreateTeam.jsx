@@ -10,7 +10,7 @@ const CreateTeam = ({ teamsDatabase, setTeamsDatabase, setTeamCode }) => {
   };
 
   return (
-    <button onClick={handleCreateTeam}>Create Team</button>
+    <button className="create-button" onClick={handleCreateTeam}>Create Team</button>
   );
 };
 

@@ -19,14 +19,14 @@ const SubmitTeam = ({ teamCode, teamsDatabase }) => {
   };
 
   return (
-     <div class="input-container">
-      <label htmlFor="teamCodeInput">Join with:</label>
+     <div className="submitTeam-container">
+      <label htmlFor="teamCodeInput">Join With:</label>
       <input
         type="text"
         id="teamCodeInput"
         value={inputCode}
         onChange={handleInputChange}
-        placeholder=" team code"
+        placeholder=" Enter Team Code"
       />
       <button onClick={handleSubmit}>Submit</button>
     </div>
