@@ -3,7 +3,6 @@ import SubmitTeam from '../component/SubmitTeam';
 import CreateTeam from '../component/CreateTeam';
 import '../index.css';
 
-// Define la base de datos externa
 const database = [
   { id: 1, name: 'Team A', code: 'ABC123' },
   { id: 2, name: 'Team B', code: 'DEF456' },
