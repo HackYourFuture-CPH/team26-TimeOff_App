@@ -1,42 +1,62 @@
 {
   "name": "timeoff-app",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "@testing-library/jest-dom": "^5.17.0",
-    "@testing-library/react": "^13.4.0",
-    "@testing-library/user-event": "^13.5.0",
-    "express": "^4.18.3",
-    "knex": "^3.1.0",
-    "mysql2": "^3.9.2",
-    "nodemon": "^3.1.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-scripts": "5.0.1",
-    "web-vitals": "^2.1.4"
-  },
+  "version": "1.0.0",
+  "description": "Booking timeoff app",
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "build": "webpack --mode production",
+    "start": "npm run build && node ./src/backend/server",
+    "client": "webpack-dev-server --mode development --devtool inline-source-map --hot",
+    "server": "nodemon ./src/backend/server",
+    "server-prod": "node ./src/backend/server",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
+  "author": "Benjamin Hughes",
+  "license": "MIT",
+  "proxy": "http://localhost:5000",
+  "dependencies": {
+    "@babel/core": "^7.12.3",
+    "@babel/plugin-proposal-class-properties": "^7.12.1",
+    "@babel/plugin-transform-runtime": "^7.11.5",
+    "@babel/preset-env": "^7.12.1",
+    "@babel/preset-react": "^7.12.1",
+    "@types/xml": "^1.0.3",
+    "app-root-path": "^2.1.0",
+    "babel-loader": "^8.2.4",
+    "babel-polyfill": "^6.26.0",
+    "body-parser": "^1.18.3",
+    "cookie-parser": "~1.4.3",
+    "cors": "^2.8.4",
+    "css-loader": "^5.0.0",
+    "debug": "~2.6.0",
+    "dotenv": "^4.0.0",
+    "dotenv-webpack": "^7.1.0",
+    "express": "^4.16.4",
+    "express-brute": "^1.0.1",
+    "express-form-data": "^2.0.1",
+    "html-webpack-plugin": "^4.3.0",
+    "knex": "^3.1.0",
+    "multer": "^1.3.0",
+    "mysql2": "^2.1.0",
+    "path": "^0.12.7",
+    "pg": "^8.11.3",
+    "react": "^16.8.2",
+    "react-dom": "^16.8.2",
+    "react-router-dom": "^5.0.1",
+    "sass": "^1.27.1",
+    "sass-loader": "^10.0.4",
+    "serve-favicon": "2.4.5",
+    "style-loader": "^2.0.0",
+    "url-loader": "^4.1.1",
+    "webpack": "^5.90.3",
+    "webpack-cli": "^4.9.2"
   },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  }
+  "devDependencies": {
+    "case-sensitive-paths-webpack-plugin": "^2.3.0",
+    "concurrently": "^7.0.0",
+    "install-peers": "^1.0.3",
+    "nodemon": "^2.0.15",
+    "sequelize-cli": "^6.4.1",
+    "webpack-dev-server": "^4.7.4"
+  },
+  "main": "webpack.config.cjs"
 }
