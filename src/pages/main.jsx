@@ -1,17 +1,27 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import SubmitTeam from '../component/SubmitTeam';
 import CreateTeam from '../component/CreateTeam';
 import '../index.css';
 
-const database = [
-  { id: 1, name: 'Team A', code: 'ABC123' },
-  { id: 2, name: 'Team B', code: 'DEF456' },
-  { id: 3, name: 'Team C', code: 'GHI789' }
-];
-
 const Main = () => {
   const [teamCode, setTeamCode] = useState('');
-  const [teamsDatabase, setTeamsDatabase] = useState(database);
+  const [teamsDatabase, setTeamsDatabase] = useState([]);
+
+  useEffect(() => {
+    fetchTeams();
+  }, []);
+  const fetchTeams = async () => {
+    try {
+      const response = await fetch('http://localhost:4050/api/teams'); // Adjust URL as needed
+      if (!response.ok) {
+        throw new Error('Failed to fetch teams');
+      }
+      const teams = await response.json();
+      setTeamsDatabase(teams);
+    } catch (error) {
+      console.error('Error fetching teams:', error);
+    }
+  };
 
   return (
     <div className="top-Header">

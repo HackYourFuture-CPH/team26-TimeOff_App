@@ -1,11 +1,18 @@
 const express = require('express');
-const db = require('./database'); 
+const cors = require('cors');
+const db = require('./database');
 
 const app = express();
 
+app.use(cors({
+  origin: 'http://localhost:4051', 
+  methods: ['GET', 'POST'], 
+  credentials: true 
+}));
+
 app.get('/api/teams', async (req, res) => {
   try {
-    const teams = await db.select().from('member'); 
+    const teams = await db.select().from('team'); 
     res.json(teams);
   } catch (error) {
     console.error('Error fetching teams:', error);

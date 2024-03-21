@@ -12,7 +12,7 @@ const SubmitTeam = ({ teamCode, teamsDatabase }) => {
   const handleSubmit = () => {
     const team = teamsDatabase.find((team) => team.code === inputCode);
     if (team) {
-      window.alert(`Log in ${team.name}`);
+      window.alert(`Log in ${team.title}`);
     } else {
       window.alert('Invalid team code');
     }
