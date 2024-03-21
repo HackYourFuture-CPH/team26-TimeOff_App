@@ -18,7 +18,9 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "src/backend/server.js & react-scripts start --port 3003",
+    "start-server": "node src/backend/server.js",
+    "start-frontend": "react-scripts start --port 3003",
+    "start": "npm run start-server & npm run start-frontend",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
