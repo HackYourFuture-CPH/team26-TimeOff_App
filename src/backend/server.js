@@ -1,4 +1,4 @@
-const app = require('./api');
+const app = require('./API/teams');
 
 const PORT = process.env.PORT || 3030;
 app.listen(PORT, () => {
