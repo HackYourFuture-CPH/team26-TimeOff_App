@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import '../index.css';
+
 
 const SubmitTeam = ({ teamCode, teamsDatabase }) => {
   const [inputCode, setInputCode] = useState('');
@@ -10,20 +12,21 @@ const SubmitTeam = ({ teamCode, teamsDatabase }) => {
   const handleSubmit = () => {
     const team = teamsDatabase.find((team) => team.code === inputCode);
     if (team) {
-      window.alert(`Log in ${team.name}`);
+      window.alert(`Log in ${team.title}`);
     } else {
       window.alert('Invalid team code');
     }
   };
 
   return (
-    <div>
-      <label htmlFor="teamCodeInput">Team Code:</label>
+     <div className="submitTeam-container">
+      <label htmlFor="teamCodeInput">Join With:</label>
       <input
         type="text"
         id="teamCodeInput"
         value={inputCode}
         onChange={handleInputChange}
+        placeholder=" Enter Team Code"
       />
       <button onClick={handleSubmit}>Submit</button>
     </div>

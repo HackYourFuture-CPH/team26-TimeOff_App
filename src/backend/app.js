@@ -4,10 +4,10 @@ const express = require("express");
 const app = express();
 const router = express.Router();
 const path = require("path");
-const membersRouter = require("./api/members");
-const teamsRouter = require("./api/teams");
-const colorsRouter = require("./api/colors");
-const timeoffRouter = require("./api/timeoff");
+const membersRouter = require("./API/members");
+const teamsRouter = require("./API/teams");
+const colorsRouter = require("./API/colors");
+const timeoffRouter = require("./API/timeoff");
 
 //The body function has changed after version 15 while I am using 16. If put request doesnt work then install bodyparser
 //const bodyParser = require("body-parser");
