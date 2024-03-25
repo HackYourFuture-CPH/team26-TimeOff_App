@@ -1,20 +1,10 @@
 const express = require('express');
-const cors = require('cors');
 const db = require('../database');
+const router = express.Router();
 
-const app = express();
-
-app.use(cors({
-  origin: 'http://localhost:4051', 
-  methods: ['GET', 'POST'], 
-  credentials: true 
-}));
-
-app.use(express.json()); 
-
-app.get('/api/teams', async (req, res) => {
+router.get('/', async (req, res) => {
   try {
-    const teams = await db.select().from('teams'); 
+    const teams = await db.select().from('teams');
     res.json(teams);
   } catch (error) {
     console.error('Error fetching teams:', error);
@@ -22,11 +12,11 @@ app.get('/api/teams', async (req, res) => {
   }
 });
 
-app.post('/api/teams', async (req, res) => {
+router.post('/', async (req, res) => {
   try {
-    const { team_name, team_code } = req.body; 
+    const { team_name, team_code } = req.body;
     const creationDate = new Date();
-    await db('teams').insert({ team_name, team_code, created_date: creationDate }); 
+    await db('teams').insert({ team_name, team_code, created_date: creationDate });
     res.status(201).json({ message: 'Team created successfully' });
   } catch (error) {
     console.error('Error creating team:', error);
@@ -34,4 +24,4 @@ app.post('/api/teams', async (req, res) => {
   }
 });
 
-module.exports = app;
+module.exports = router;

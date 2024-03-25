@@ -3,28 +3,38 @@ import '../index.css';
 
 const SubmitTeam = () => {
   const [inputCode, setInputCode] = useState('');
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState('');
 
   const handleInputChange = (event) => {
     setInputCode(event.target.value);
   };
 
   const handleSubmit = async () => {
+    setLoading(true); 
+
     try {
-      const response = await fetch('http://localhost:4050/api/teams');
+      const response = await fetch('http://localhost:4050/api/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ team_code: inputCode })
+      });
+
       if (!response.ok) {
-        throw new Error('Failed to fetch teams');
+        throw new Error('Failed to authenticate team');
       }
-      const teams = await response.json();
-      
-      const team = teams.find((team) => team.team_code === inputCode);
-      if (team) {
-        window.alert(`Logged in to ${team.team_name}`);
-      } else {
-        window.alert('Invalid team code');
-      }
+
+      const { token } = await response.json();
+      sessionStorage.setItem('token', token);
+
+      window.location.href = '/dashboard';
     } catch (error) {
-      console.error('Error fetching teams:', error);
-      window.alert('Failed to fetch teams');
+      console.error('Error authenticating team:', error);
+      setError('Invalid team code');
+    } finally {
+      setLoading(false); 
     }
   };
 
@@ -38,7 +48,10 @@ const SubmitTeam = () => {
         onChange={handleInputChange}
         placeholder=" Enter Team Code"
       />
-      <button onClick={handleSubmit}>Submit</button>
+      <button onClick={handleSubmit} disabled={loading}>
+        {loading ? 'Loading...' : 'Submit'}
+      </button>
+      {error && <div className="error">{error}</div>}
     </div>
   );
 };
