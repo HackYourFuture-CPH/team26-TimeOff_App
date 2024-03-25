@@ -4,15 +4,15 @@ import CreateTeam from '../component/CreateTeam';
 import '../index.css';
 
 const Main = () => {
-  const [teamCode, setTeamCode] = useState('');
   const [teamsDatabase, setTeamsDatabase] = useState([]);
 
   useEffect(() => {
     fetchTeams();
   }, []);
+
   const fetchTeams = async () => {
     try {
-      const response = await fetch('http://localhost:4050/api/teams'); // Adjust URL as needed
+      const response = await fetch('http://localhost:4050/api/teams');
       if (!response.ok) {
         throw new Error('Failed to fetch teams');
       }
@@ -26,12 +26,8 @@ const Main = () => {
   return (
     <div className="top-Header">
       <h2>Time Off</h2>
-      <SubmitTeam teamCode={teamCode} teamsDatabase={teamsDatabase} />
-      <CreateTeam
-        teamsDatabase={teamsDatabase}
-        setTeamsDatabase={setTeamsDatabase}
-        setTeamCode={setTeamCode}
-      />
+      <SubmitTeam teamsDatabase={teamsDatabase} />
+      <CreateTeam setTeamsDatabase={setTeamsDatabase} />
     </div>
   );
 };
