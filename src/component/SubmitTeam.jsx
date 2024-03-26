@@ -1,40 +1,42 @@
-import { useState } from 'react';
-import '../index.css';
+import { useState } from "react";
+import { useNavigate } from "react-router-dom"; 
+import { useUser } from "../UserContext";
 
 const SubmitTeam = () => {
-  const [inputCode, setInputCode] = useState('');
+  const [inputCode, setInputCode] = useState("");
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState('');
+  const [error, setError] = useState("");
+  const { login } = useUser();
+  const navigate = useNavigate(); 
 
   const handleInputChange = (event) => {
     setInputCode(event.target.value);
   };
 
   const handleSubmit = async () => {
-    setLoading(true); 
+    setLoading(true);
 
     try {
-      const response = await fetch('http://localhost:4050/api/login', {
-        method: 'POST',
+      const response = await fetch("http://localhost:4050/api/login", {
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json'
+          "Content-Type": "application/json",
         },
-        body: JSON.stringify({ team_code: inputCode })
+        body: JSON.stringify({ team_code: inputCode }),
       });
 
       if (!response.ok) {
-        throw new Error('Failed to authenticate team');
+        throw new Error("Failed to authenticate team");
       }
 
-      const { token } = await response.json();
-      sessionStorage.setItem('token', token);
+      login();
 
-      window.location.href = '/dashboard';
+      navigate("/dashboard"); 
     } catch (error) {
-      console.error('Error authenticating team:', error);
-      setError('Invalid team code');
+      console.error("Error authenticating team:", error);
+      setError("Invalid team code");
     } finally {
-      setLoading(false); 
+      setLoading(false);
     }
   };
 
@@ -49,7 +51,7 @@ const SubmitTeam = () => {
         placeholder=" Enter Team Code"
       />
       <button onClick={handleSubmit} disabled={loading}>
-        {loading ? 'Loading...' : 'Submit'}
+        {loading ? "Loading..." : "Submit"}
       </button>
       {error && <div className="error">{error}</div>}
     </div>
