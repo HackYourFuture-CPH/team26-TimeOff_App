@@ -39,10 +39,10 @@ if (process.env.API_PATH) {
   throw "API_PATH is not set. Remember to set it in your .env file"
 }
 
-// for the frontend. 
-app.use("*", (req, res) => {
-  res.sendFile(path.join(`${buildPath}/index.html`));
-});
+// // for the frontend. 
+// app.use("*", (req, res) => {
+//   res.sendFile(path.join(`${buildPath}/index.html`));
+// });
 
 
 module.exports = app;

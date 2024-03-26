@@ -8,7 +8,6 @@ const CreateTeam = ({ setTeamsDatabase, setTeamCode }) => {
       if (!title) {
         return;
       }
-
       const response = await fetch('http://localhost:4050/api/teams', {
         method: 'POST',
         headers: {
