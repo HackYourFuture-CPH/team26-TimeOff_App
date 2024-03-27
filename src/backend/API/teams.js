@@ -1,33 +1,28 @@
-const express = require('express');
-const cors = require('cors');
-const db = require('../database');
-const app = express();
-app.use(cors({
-  origin: 'http://localhost:4051', 
-  methods: ['GET', 'POST'], 
-  credentials: true 
-}));
-app.use(express.json()); 
+const express = require("express");
+const router = express.Router();
+const db = require("../database");
 
-app.get('/api/teams', async (req, res) => {
+router.get('/', async (req, res) => {
   try {
-    const teams = await db.select().from('teams'); 
-    res.json(teams);
+    const allTeams = await db.select('*').from('teams');
+    res.json(allTeams); 
   } catch (error) {
-    console.error('Error fetching teams:', error);
-    res.status(500).json({ error: 'Internal Server Error' });
+    console.error(error);
+    res.status(500).json({ error: 'An unexpected error occurred while processing your request.' });
   }
 });
 
-app.post('/api/teams', async (req, res) => {
+router.post("/", async (request, response) => {
+  const addTeam = request.body;
+  addTeam.created_date = new Date();
+
   try {
-    const { team_name, team_code } = req.body; 
-    const creationDate = new Date();
-    await db('teams').insert({ team_name, team_code, created_date: creationDate }); 
-    res.status(201).json({ message: 'Team created successfully' });
+    await db("teams").insert(addTeam);
+    response.status(201).json("New team has been added");
   } catch (error) {
-    console.error('Error creating team:', error);
-    res.status(500).json({ error: 'Internal Server Error' });
+    console.error(error); 
+    response.status(500).json({ error: "Failed to add a new member" });
   }
 });
-module.exports = app;
+
+module.exports = router;

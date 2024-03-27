@@ -4,8 +4,8 @@ const db = require("../database");
 
 router.get('/', async (req, res) => {
   try {
-    const allMembers = await db.select('*').from('members');
-    res.json(allMembers); 
+    const allTimeOffs = await db.select('*').from('timeoff');
+    res.json(allTimeOffs); 
   } catch (error) {
     console.error(error);
     res.status(500).json({ error: 'An unexpected error occurred while processing your request.' });
@@ -13,15 +13,15 @@ router.get('/', async (req, res) => {
 });
 
 router.post("/", async (request, response) => {
-  const addMember = request.body;
-  addMember.created_date = new Date();
+  const addTimeOff = request.body;
+  addTimeOff.created_date = new Date();
 
   try {
-    await db("members").insert(addMember);
-    response.status(201).json("New member has been added");
+    await db("timeoff").insert(addTimeOff);
+    response.status(201).json("New timeoff has been added");
   } catch (error) {
     console.error(error); 
-    response.status(500).json({ error: "Failed to add a new member" });
+    response.status(500).json({ error: "Failed to add a new timeoff" });
   }
 });
 
