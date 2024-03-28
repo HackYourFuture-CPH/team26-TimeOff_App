@@ -15,11 +15,14 @@ router.post('/', async (req, res) => {
 
     const token = jwt.sign({ teamId: team.id }, process.env.JWT_SECRET, { expiresIn: '1h' });
 
+    res.cookie('token', token, { httpOnly: true, maxAge: 3600000 });
+
     res.json({ token });
   } catch (error) {
     console.error('Error logging in:', error);
     res.status(500).json({ error: 'Internal Server Error' });
   }
 });
+
 
 module.exports = router;

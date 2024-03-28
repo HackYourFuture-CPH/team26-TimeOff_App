@@ -1,13 +1,14 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom"; 
+import { useNavigate } from "react-router-dom";
 import { useUser } from "../UserContext";
+import Cookies from "js-cookie";
 
 const SubmitTeam = () => {
   const [inputCode, setInputCode] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const { login } = useUser();
-  const navigate = useNavigate(); 
+  const navigate = useNavigate();
 
   const handleInputChange = (event) => {
     setInputCode(event.target.value);
@@ -29,9 +30,18 @@ const SubmitTeam = () => {
         throw new Error("Failed to authenticate team");
       }
 
+      const data = await response.json();
+      const token = data.token;
+
+      if (!token) {
+        throw new Error("Token not received");
+      }
+
+      Cookies.set("token", token);
+
       login();
 
-      navigate("/dashboard"); 
+      navigate("/dashboard");
     } catch (error) {
       console.error("Error authenticating team:", error);
       setError("Invalid team code");
