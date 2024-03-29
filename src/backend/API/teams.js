@@ -25,4 +25,20 @@ router.post("/", async (request, response) => {
   }
 });
 
+
+router.get("/:code", async (request, response) => {
+  const { code } = request.params;
+  try {
+    const team = await db("teams").select("*").where({ team_code: code }).first();
+    if (team) {
+      response.json(team);
+    } else {
+      response.status(404).json({ error: "Team not found" });
+    }
+  } catch (error) {
+    console.error(error);
+    response.status(500).json({ error: "Failed to retrieve the team" });
+  }
+});
+
 module.exports = router;
