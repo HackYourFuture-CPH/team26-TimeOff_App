@@ -21,10 +21,9 @@ router.post("/", async (request, response) => {
     response.status(201).json("New team has been added");
   } catch (error) {
     console.error(error); 
-    response.status(500).json({ error: "Failed to add a new member" });
+    response.status(500).json({ error: "Failed to add a new team" });
   }
 });
-
 
 router.get("/:code", async (request, response) => {
   const { code } = request.params;

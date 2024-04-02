@@ -13,8 +13,17 @@ router.get('/', async (req, res) => {
 });
 
 router.post("/", async (request, response) => {
-  const addTimeOff = request.body;
-  addTimeOff.created_date = new Date();
+  const { start_date, end_date, description } = request.body; 
+  if (!start_date || !end_date || !description) {
+    return response.status(400).json({ error: 'Missing required fields' });
+  }
+
+  const addTimeOff = {
+    start_date,
+    end_date,
+    description,
+    created_date: new Date(),
+  };
 
   try {
     await db("timeoff").insert(addTimeOff);

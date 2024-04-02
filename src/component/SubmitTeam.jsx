@@ -1,7 +1,9 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import '../index.css';
 
-const SubmitTeam = () => {
+const SubmitTeam = () => { 
+  const navigate = useNavigate();
   const [inputCode, setInputCode] = useState('');
 
   const handleInputChange = (event) => {
@@ -10,15 +12,16 @@ const SubmitTeam = () => {
 
   const handleSubmit = async () => {
     try {
-      const response = await fetch('http://localhost:4050/api/teams');
+      const response = await fetch('/api/teams');
       if (!response.ok) {
         throw new Error('Failed to fetch teams');
       }
       const teams = await response.json();
-
+      
       const team = teams.find((team) => team.team_code === inputCode);
+      console.log(team);
       if (team) {
-        window.alert(`Logged in to ${team.team_name}`);
+        navigate(`/team/${inputCode}`); 
       } else {
         window.alert('Invalid team code');
       }

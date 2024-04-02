@@ -7,7 +7,7 @@ import '../index.css';
 const Main = () => {
   const [teamsDatabase, setTeamsDatabase] = useState([]);
   const [membersDatabase, setMembersDatabase] = useState([]);
-  const [isLoading, setIsLoading] = useState(true); // Add loading state
+  const [isLoading, setIsLoading] = useState(true); 
 
   useEffect(() => {
     fetchTeams();
@@ -16,7 +16,7 @@ const Main = () => {
 
   const fetchTeams = async () => {
     try {
-      const response = await fetch('http://localhost:4050/api/teams');
+      const response = await fetch('/api/teams');
       if (!response.ok) {
         throw new Error('Failed to fetch teams');
       }
@@ -29,13 +29,13 @@ const Main = () => {
 
   const fetchMembers = async () => {
     try {
-      const response = await fetch('http://localhost:4050/api/members');
+      const response = await fetch('/api/members');
       if (!response.ok) {
         throw new Error('Failed to fetch members');
       }
       const members = await response.json();
       setMembersDatabase(members);
-      setIsLoading(false); // Set loading to false once data is fetched
+      setIsLoading(false);
     } catch (error) {
       console.error('Error fetching members:', error);
     }

@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import '../index.css';
+
 
 function CreateMember({ memberId, teamsDatabase }) {
   const [name, setName] = useState({ firstName: "", lastName: "" });
@@ -20,7 +22,7 @@ function CreateMember({ memberId, teamsDatabase }) {
     };
 
     try {
-      const response = await fetch("http://localhost:4050/api/members", {
+      const response = await fetch("/api/members", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -49,7 +51,7 @@ function CreateMember({ memberId, teamsDatabase }) {
   return (
     <div>
       {!isFormVisible && (
-        <button onClick={() => setIsFormVisible(true)}>Create Member</button>
+        <button className="create-button" onClick={() => setIsFormVisible(true)}>Create Member</button>
       )}
       {isFormVisible && (
         <form onSubmit={handleSubmit} className="member-form">

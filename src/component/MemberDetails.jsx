@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import TimeoffForm from "./TimeoffForm";
+import CreateTimeoff from "./CreateTimeoff";
 
 function MemberDetails({ match }) {
   const [member, setMember] = useState(null);
@@ -42,7 +42,7 @@ function MemberDetails({ match }) {
         {member.assigned_dayoff >= member.allowed_dayoff ? (
           <p>You have used all your allowed days off. 😞</p>
         ) : (
-          <TimeoffForm memberId={member.id} maxDaysoff={member.allowed_dayoff} />
+          <CreateTimeoff memberId={member.id} maxDaysoff={member.allowed_dayoff} />
         )}
       </div>
     </div>

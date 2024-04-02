@@ -11,7 +11,7 @@ const CreateTeam = ({ setTeamsDatabase }) => {
         return;
       }
 
-      const response = await fetch('http://localhost:4050/api/teams', {
+      const response = await fetch('/api/teams', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

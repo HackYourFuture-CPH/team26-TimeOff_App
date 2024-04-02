@@ -7,7 +7,6 @@ const teamsRouter = require("./API/teams");
 const membersRouter = require("./API/members");
 const timeoffRouter = require("./API/timeOff");
 const buildPath = path.join(__dirname, "../../dist");
-const port = process.env.PORT || 3000; 
 const cors = require("cors");
 
 app.use(express.static(buildPath));
@@ -15,7 +14,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 app.use(cors({
-  origin: 'http://localhost:4051',
+  origin: 'http://localhost:3000',
   methods: ['GET', 'POST'],
   credentials: true
 }));

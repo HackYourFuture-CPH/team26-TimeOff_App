@@ -1,6 +1,10 @@
-const Navbar = () => {
-  return (
+import { Link } from "react-router-dom";
+
+export default function Navbar () {
+    return (
     <div className='header'>
+                  <Link to="/">
+
       <div className='container'>
         <a href="logo">
           <svg id="logo-14" width="73" height="49" viewBox="0 0 73 49" fill="none" xmlns="http://www.w3.org/2000/svg"> 
@@ -10,8 +14,8 @@ const Navbar = () => {
           </svg>
         </a>
       </div>
+      </Link>
     </div>
-  );
-};
+  )
+}
 
-export default Navbar;
