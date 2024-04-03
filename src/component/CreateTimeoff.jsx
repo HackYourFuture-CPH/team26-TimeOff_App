@@ -1,4 +1,7 @@
 import React, { useState } from "react";
+// use this format if fetching
+//import { apiPath } from '../api';
+// fetch(apiPath('/teams'))
 
 function CreateTimeoff({ memberId, maxDaysoff }) {
   const [startDate, setStartDate] = useState("");

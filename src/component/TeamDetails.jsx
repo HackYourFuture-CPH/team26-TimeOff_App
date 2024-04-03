@@ -3,6 +3,11 @@ import '../index.css';
 import MembersList from './MembersList';
 import CreateMember from './CreateMember';
 
+// use this format if fetching
+import { apiPath } from '../api';
+// fetch(apiPath('/teams'))
+
+
 const TeamDetails = ({ teams }) => {
   const [members, setMembers] = useState([]);
   const [timeOffs, setTimeOffs] = useState([]);
@@ -16,12 +21,13 @@ const TeamDetails = ({ teams }) => {
 
   const fetchTeamMembers = async () => {
     try {
-      const response = await fetch(`/api/teams/${team.id}/members`);
+      const response = await fetch(apiPath(`/teams/${team.id}/members`));
       if (!response.ok) {
         throw new Error('Failed to fetch team members');
       }
       const data = await response.json();
       setMembers(data);
+      console.log("fetch member", data);
     } catch (error) {
       console.error('Error fetching team members:', error);
     }

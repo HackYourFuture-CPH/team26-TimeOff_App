@@ -1,5 +1,9 @@
 import React, { useState } from "react";
 import '../index.css';
+// use this format if fetching
+import { apiPath } from '../api';
+// fetch(apiPath('/teams'))
+
 
 
 function CreateMember({ memberId, teamsDatabase }) {
@@ -22,7 +26,7 @@ function CreateMember({ memberId, teamsDatabase }) {
     };
 
     try {
-      const response = await fetch("/api/members", {
+      const response = await fetch(apiPath('/members'), {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

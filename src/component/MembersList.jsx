@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from "react";
 import Member from "./Member";
-
+// use this format if fetching
+import { apiPath } from '../api';
+// fetch(apiPath('/teams'))
 const MembersList = () => {
   const [members, setMembers] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("/api/members")
+    fetch(apiPath('/members'))
       .then((response) => response.json())
       .then((data) => {
         setMembers(data);

@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import SubmitTeam from '../component/SubmitTeam';
+import { apiPath } from '../api';
+
 
 import '../index.css';
 
@@ -8,16 +10,21 @@ const Home = () => {
 
   useEffect(() => {
     fetchTeams();
+    console.log("useEffect in fetchteams Triggered")
   }, []);
 
   const fetchTeams = async () => {
+    
     try {
-      const response = await fetch('/api/teams');
+      const response = await fetch(apiPath('/teams'));
+      console.log(apiPath('/teams'))
       if (!response.ok) {
         throw new Error('Failed to fetch teams');
       }
       const teams = await response.json();
       setTeamsDatabase(teams);
+      console.log("setTeamsDatabase in fetchteams Triggered")
+
     } catch (error) {
       console.error('Error fetching teams:', error);
     }

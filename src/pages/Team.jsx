@@ -3,6 +3,8 @@ import { useParams, useNavigate } from "react-router-dom";
 import SubmitTeam from "../component/SubmitTeam"; 
 import MembersList from "../component/MembersList"; 
 import Member from "../component/Member";
+import { apiPath } from '../api';
+
 
 const Team = () => {
   const [team, setTeam] = useState(null);
@@ -15,7 +17,7 @@ const Team = () => {
     const fetchTeam = async () => {
       try {
         console.log("fetching teams...")
-        const response = await fetch(`/api/teams/${code}`);
+        const response = await fetch(apiPath(`/teams/${code}`));
         console.log("Response", response)
         if (!response.ok) {
           throw new Error("Failed to fetch team");
@@ -23,6 +25,8 @@ const Team = () => {
         const teamData = await response.json();
         console.log("Team Data", teamData)
         setTeam(teamData);
+        console.log("fetch member");
+
       } catch (error) {
         console.error("Error fetching team:", error);
       }
@@ -30,7 +34,7 @@ const Team = () => {
 
     const fetchMembers = async () => {
       try {
-        const response = await fetch(`/api/teams/${code}/members`);
+        const response = await fetch(apiPath(`/teams/${code}/members`));
         if (!response.ok) {
           throw new Error("Failed to fetch members");
         }

@@ -1,5 +1,9 @@
 import React, { useState, useEffect } from "react";
 import CreateTimeoff from "./CreateTimeoff";
+import { apiPath } from "../api";
+// use this format if fetching
+//import { apiPath } from '../api';
+// fetch(apiPath('/teams'))
 
 function MemberDetails({ match }) {
   const [member, setMember] = useState(null);
@@ -11,7 +15,7 @@ function MemberDetails({ match }) {
 
     const fetchMemberDetails = async () => {
       try {
-        const memberResponse = await fetch(`/api/members/${memberid}`);
+        const memberResponse = await fetch(apiPath(`/members/${memberid}`));
         const memberData = await memberResponse.json();
         setMember(memberData);
         setLoading(false);

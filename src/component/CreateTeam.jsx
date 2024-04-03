@@ -1,5 +1,7 @@
 import '../index.css';
-
+// use this format if fetching
+//import { apiPath } from '../api';
+// fetch(apiPath('/teams'))
 const CreateTeam = ({ setTeamsDatabase }) => {
   const handleCreateTeam = async () => {
     try {

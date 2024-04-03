@@ -1,6 +1,10 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../index.css';
+// use this format if fetching
+import { apiPath } from '../api';
+// fetch(apiPath('/teams'))
+
 
 const SubmitTeam = () => { 
   const navigate = useNavigate();
@@ -12,7 +16,8 @@ const SubmitTeam = () => {
 
   const handleSubmit = async () => {
     try {
-      const response = await fetch('/api/teams');
+      const response = await fetch(apiPath('/teams'));
+      console.log(apiPath('/teams'))
       if (!response.ok) {
         throw new Error('Failed to fetch teams');
       }

@@ -1,6 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import CreateTimeoff from "./CreateTimeoff";
+// use this format if fetching
+//import { apiPath } from '../api';
+// fetch(apiPath('/teams'))
 
 const Member = ({ member }) => {
   
