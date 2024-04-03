@@ -7,11 +7,11 @@ function App() {
   return (
     <div className="App">
       <Router>
-        <Navbar />
+        <Navbar />     
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/team/:code" element={<Team />} />
-          <Route path="*" element={<h1>404 Page not found</h1>} />
+          <Route exact path="/" element={<Home />} />
+          <Route exact path="/team/:code" element={<Team />} />
+          <Route exact path="*" element={<h1>404 Page not found</h1>} />
         </Routes>
       </Router>
     </div>
