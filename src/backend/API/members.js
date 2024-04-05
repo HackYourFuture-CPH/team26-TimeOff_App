@@ -25,4 +25,22 @@ router.post("/", async (request, response) => {
   }
 });
 
+router.get("/:id", async (request, response) => {
+  const { id } = request.params;
+  console.log("Member ID Before try", id);
+
+  try {
+    const member = await db("members").select("*").where({ id }).first();
+    console.log("Member ID logging out");
+    if (member) {
+      response.json(member);
+    } else {
+      response.status(404).json({ error: "Member not found" });
+    }
+  } catch (error) {
+    console.error(error);
+    response.status(500).json({ error: "Failed to retrieve the member" });
+  }
+});
+
 module.exports = router;
