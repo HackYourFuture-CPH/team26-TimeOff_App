@@ -51,9 +51,7 @@ const Team = () => {
     return <div>Loading team data...</div>;
   }
 
-  console.log("Teams Object", team)
-  console.log("Members Array", members)
-  return (
+    return (
     <div>
       <h2>{team.team_name}</h2>
       <MembersList teamId={team.id} /> 

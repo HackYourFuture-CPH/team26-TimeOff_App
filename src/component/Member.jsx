@@ -1,9 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import CreateTimeoff from "./CreateTimeoff";
-// use this format if fetching
-//import { apiPath } from '../api';
-// fetch(apiPath('/teams'))
+
 
 const Member = ({ member }) => {
   
@@ -12,9 +9,10 @@ const Member = ({ member }) => {
       <div className="member-card">
         <h3>
           {member.first_name}{" "}
-          <span style={{ color: member.color }}>{member.color}</span>
+          <svg width="12" height="12" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="6" cy="6" r="6" fill={member.color} />
+          </svg>
         </h3>
-        <p>You have booked {member.assigned_dayoff}</p>
       </div>
     </Link>
   );
