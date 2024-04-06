@@ -6,7 +6,7 @@ import { apiPath } from '../api';
 
 
 
-function CreateMember({ memberId, teamsDatabase }) {
+function CreateMember({teamsDatabase }) {
   const [name, setName] = useState({ firstName: "", lastName: "" });
   const [email, setEmail] = useState("");
   const [color, setColor] = useState("#000000"); 
@@ -22,7 +22,7 @@ function CreateMember({ memberId, teamsDatabase }) {
       email: email,
       color: color,
       team_id: selectedTeam,
-      id: memberId,
+      id: Math.floor(Math.random() * 1000000) + 1,
     };
 
     try {

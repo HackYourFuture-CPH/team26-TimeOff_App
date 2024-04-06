@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import SubmitTeam from '../component/SubmitTeam';
 import { apiPath } from '../api';
-
 import '../index.css';
+import CreateMember from '../component/CreateMember';
 
 const Home = () => {
   const [teamsDatabase, setTeamsDatabase] = useState([]);
@@ -29,6 +29,7 @@ const Home = () => {
     <div className="top-Header">
       <h2>Time Off</h2>
       <SubmitTeam teamsDatabase={teamsDatabase} />
+      <CreateMember teamsDatabase={teamsDatabase} />
     </div>
   );
 };
