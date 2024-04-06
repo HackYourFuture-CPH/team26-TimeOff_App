@@ -12,7 +12,7 @@ router.get('/', async (req, res) => {
   }
 });
 
-router.post("/", async (request, response) => {
+router.post("/:id", async (request, response) => {
   const { start_date, end_date, description } = request.body; 
   if (!start_date || !end_date || !description) {
     return response.status(400).json({ error: 'Missing required fields' });

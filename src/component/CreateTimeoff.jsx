@@ -1,7 +1,6 @@
 import React, { useState } from "react";
-// use this format if fetching
-//import { apiPath } from '../api';
-// fetch(apiPath('/teams'))
+import { apiPath } from '../api';
+
 
 function CreateTimeoff({ memberId, maxDaysoff }) {
   const [startDate, setStartDate] = useState("");
@@ -22,7 +21,8 @@ function CreateTimeoff({ memberId, maxDaysoff }) {
     }
 
     try {
-      const response = await fetch(`/api/members/${memberId}/timeoff`, {
+      
+      const response = await fetch(apiPath(`/timeoff/${memberId}`), {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
