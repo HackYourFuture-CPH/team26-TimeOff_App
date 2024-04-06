@@ -27,7 +27,6 @@ const TeamDetails = ({ teams }) => {
       }
       const data = await response.json();
       setMembers(data);
-      console.log("fetch member", data);
     } catch (error) {
       console.error('Error fetching team members:', error);
     }

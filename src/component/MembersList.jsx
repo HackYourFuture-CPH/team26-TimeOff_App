@@ -28,7 +28,6 @@ const MembersList = ({teamId}) => {
   return (
     <div className="containerList">
       <div className="titleContainer">
-        <h2>Members List</h2>
         <h4>Here is a list of your team members!</h4>
       </div>
       <div className="members-grid">

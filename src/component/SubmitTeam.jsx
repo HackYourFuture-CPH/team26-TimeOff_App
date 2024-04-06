@@ -17,14 +17,12 @@ const SubmitTeam = () => {
   const handleSubmit = async () => {
     try {
       const response = await fetch(apiPath('/teams'));
-      console.log(apiPath('/teams'))
       if (!response.ok) {
         throw new Error('Failed to fetch teams');
       }
       const teams = await response.json();
       
       const team = teams.find((team) => team.team_code === inputCode);
-      console.log(team);
       if (team) {
         navigate(`/team/${inputCode}`); 
       } else {

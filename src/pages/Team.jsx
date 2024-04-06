@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import MembersList from "../component/MembersList"; 
-import Member from "../component/Member";
 import { apiPath } from '../api';
 
 
@@ -11,19 +10,15 @@ const Team = () => {
   const { code } = useParams();
 
   useEffect(() => {
-    console.log("UseEffect Triggered")
+    
     const fetchTeam = async () => {
       try {
-        console.log("fetching teams...")
         const response = await fetch(apiPath(`/teams/${code}`));
-        console.log("Response", response)
         if (!response.ok) {
           throw new Error("Failed to fetch team");
         }
         const teamData = await response.json();
-        console.log("Team Data", teamData)
         setTeam(teamData);
-        console.log("fetch member");
 
       } catch (error) {
         console.error("Error fetching team:", error);
