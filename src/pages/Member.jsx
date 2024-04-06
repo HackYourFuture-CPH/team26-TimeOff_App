@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import MembersList from "../component/MembersList"; 
 import Member from "../component/Member";
 import { apiPath } from '../api';
@@ -9,12 +9,11 @@ const Team = () => {
   const [team, setTeam] = useState(null);
   const [members, setMembers] = useState([]);
   const { code } = useParams();
+  const navigate = useNavigate();
 
   useEffect(() => {
-    console.log("UseEffect Triggered")
     const fetchTeam = async () => {
       try {
-        console.log("fetching teams...")
         const response = await fetch(apiPath(`/teams/${code}`));
         console.log("Response", response)
         if (!response.ok) {
@@ -23,7 +22,6 @@ const Team = () => {
         const teamData = await response.json();
         console.log("Team Data", teamData)
         setTeam(teamData);
-        console.log("fetch member");
 
       } catch (error) {
         console.error("Error fetching team:", error);
@@ -51,12 +49,15 @@ const Team = () => {
     return <div>Loading team data...</div>;
   }
 
-  console.log("Teams Object", team)
-  console.log("Members Array", members)
   return (
     <div>
       <h2>{team.team_name}</h2>
-      <MembersList teamId={team.id} /> 
+      {/* <div>
+        {members.map((member) => (
+          <Member key={member.id} member={member} />
+        ))}
+      </div> */}
+      <MembersList /> 
     </div>
   );
 };

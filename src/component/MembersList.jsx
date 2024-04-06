@@ -3,7 +3,7 @@ import Member from "./Member";
 // use this format if fetching
 import { apiPath } from '../api';
 // fetch(apiPath('/teams'))
-const MembersList = () => {
+const MembersList = ({teamId}) => {
   const [members, setMembers] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -11,7 +11,7 @@ const MembersList = () => {
     fetch(apiPath('/members'))
       .then((response) => response.json())
       .then((data) => {
-        setMembers(data);
+        setMembers(data.filter(member => member.team_id === teamId));
       })
       .catch((error) => {
         console.error("Error fetching members:", error);
