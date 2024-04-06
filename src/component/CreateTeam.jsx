@@ -1,7 +1,6 @@
 import '../index.css';
-// use this format if fetching
-//import { apiPath } from '../api';
-// fetch(apiPath('/teams'))
+import { apiPath } from '../api';
+
 const CreateTeam = ({ setTeamsDatabase }) => {
   const handleCreateTeam = async () => {
     try {
@@ -13,7 +12,7 @@ const CreateTeam = ({ setTeamsDatabase }) => {
         return;
       }
 
-      const response = await fetch('/api/teams', {
+      const response = await fetch(apiPath('/teams'), {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

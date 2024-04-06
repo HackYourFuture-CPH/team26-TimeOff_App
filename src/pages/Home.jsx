@@ -3,6 +3,7 @@ import SubmitTeam from '../component/SubmitTeam';
 import { apiPath } from '../api';
 import '../index.css';
 import CreateMember from '../component/CreateMember';
+import CreateTeam from '../component/CreateTeam';
 
 const Home = () => {
   const [teamsDatabase, setTeamsDatabase] = useState([]);
@@ -30,6 +31,7 @@ const Home = () => {
       <h2>Time Off</h2>
       <SubmitTeam teamsDatabase={teamsDatabase} />
       <CreateMember teamsDatabase={teamsDatabase} />
+      <CreateTeam setTeamsDatabase={setTeamsDatabase} />
     </div>
   );
 };
