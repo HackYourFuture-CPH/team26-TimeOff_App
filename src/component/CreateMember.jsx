@@ -10,6 +10,7 @@ function CreateMember({teamsDatabase }) {
   const [name, setName] = useState({ firstName: "", lastName: "" });
   const [email, setEmail] = useState("");
   const [color, setColor] = useState("#000000"); 
+  const [dayOff, setdayOff] = useState(""); 
   const [selectedTeam, setSelectedTeam] = useState(""); 
   const [isFormVisible, setIsFormVisible] = useState(false); 
 
@@ -20,6 +21,7 @@ function CreateMember({teamsDatabase }) {
       first_name: name.firstName,
       last_name: name.lastName,
       email: email,
+      allowed_dayoff: dayOff,
       color: color,
       team_id: selectedTeam,
       id: Math.floor(Math.random() * 1000000) + 1,
@@ -38,6 +40,7 @@ function CreateMember({teamsDatabase }) {
         alert("Member created successfully!");
         setName({ firstName: "", lastName: "" });
         setEmail("");
+        setdayOff("");
         setColor("#000000");
         setSelectedTeam("");
         setIsFormVisible(false); 
@@ -81,6 +84,14 @@ function CreateMember({teamsDatabase }) {
               type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
+            />
+          </div>
+          <div>
+            <label>Allowed days off:</label>
+            <input
+              type="integar"
+              value={dayOff}
+              onChange={(e) => setdayOff(e.target.value)}
             />
           </div>
           <div>
