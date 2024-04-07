@@ -1,7 +1,11 @@
+import { useNavigate } from "react-router-dom";
 import '../index.css';
 import { apiPath } from '../api';
 
 const CreateTeam = ({ setTeamsDatabase }) => {
+  const navigate = useNavigate();
+  
+
   const handleCreateTeam = async () => {
     try {
       const randomCode = Math.random().toString(36).substring(2, 8).toUpperCase();
@@ -26,6 +30,9 @@ const CreateTeam = ({ setTeamsDatabase }) => {
 
       setTeamsDatabase(prevTeams => [...prevTeams, { id: prevTeams.length + 1, name: newName, code: randomCode }]);
       window.alert(`New team created: ${newName} (Code: ${randomCode})`);
+      navigate(`/team/${randomCode}`);
+
+
     } catch (error) {
       console.error('Error creating team:', error);
       window.alert('Failed to create team');
