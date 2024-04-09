@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react';
 import SubmitTeam from '../component/SubmitTeam';
 import { apiPath } from '../api';
-import '../index.css';
 import CreateMember from '../component/CreateMember';
 import Navbar from './Navbar';
+import '../styles/home.css'
 
 
 const Home = () => {
@@ -30,12 +30,13 @@ const Home = () => {
   return (
 
     <div className='home-conteiner'>  <Navbar />   
-    <div className="top-Header">
-      <h2>Time Off</h2>
+    <section className="main-section">
+      <h2 className='main-header'>Time Off</h2>
+      <h3 className='main-subheader'>TimeOff_App is a web application designed to simplify the process of managing vacations and time off for teams within a company. It provides a user-friendly interface for creating teams, managing team members, and tracking their time off.</h3>
+     
       <SubmitTeam teamsDatabase={teamsDatabase} />
-      <CreateMember teamsDatabase={teamsDatabase} />
       
-    </div>
+    </section>
     </div>  
   );
 };

@@ -1,0 +1,47 @@
+.main-header {
+  margin: 1em;
+  font-style: italic;
+}
+
+.main-subheader {
+  margin: 1em;
+  font-weight: 200;
+}
+
+#teamCodeInput {
+  margin: 1em;
+  border-radius: 15px;
+  border: 2px solid orange;
+  text-align: center;
+  height: 2em;
+  width: 10em;
+  outline: none;
+}
+
+#teamCodeInput::placeholder {
+  text-align: center;
+  color: gray;
+}
+
+#teamCodeInput:focus::placeholder {
+  color: transparent; 
+}
+
+.submitTeam-container {
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  margin: 2em;
+  align-items: center;
+}
+
+.button-submit {
+  height: 2em;
+  width: 10em;
+  background-color: orange;
+  color: white;
+  border-radius: 15px;
+  border: none;
+  text-decoration: none;
+  font-weight: 600;
+}

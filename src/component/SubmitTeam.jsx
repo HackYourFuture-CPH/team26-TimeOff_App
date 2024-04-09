@@ -1,9 +1,7 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import '../index.css';
-// use this format if fetching
 import { apiPath } from '../api';
-// fetch(apiPath('/teams'))
+import '../styles/home.css'
 
 
 const SubmitTeam = () => { 
@@ -42,9 +40,9 @@ const SubmitTeam = () => {
         id="teamCodeInput"
         value={inputCode}
         onChange={handleInputChange}
-        placeholder=" Enter Team Code"
+        placeholder="Enter Team Code"
       />
-      <button onClick={handleSubmit}>Submit</button>
+      <button className='button-submit' onClick={handleSubmit}>Submit</button>
     </div>
   );
 };
