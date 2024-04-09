@@ -8,6 +8,14 @@
   font-weight: 200;
 }
 
+.main-section{
+    display: flex;
+}
+
+.main-image-conteiner{
+    margin: 5em;
+}
+
 #teamCodeInput {
   margin: 1em;
   border-radius: 15px;
