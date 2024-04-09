@@ -19,7 +19,7 @@
 #teamCodeInput {
   margin: 1em;
   border-radius: 15px;
-  border: 2px solid orange;
+  border: 2px solid #EF8038;
   text-align: center;
   height: 2em;
   width: 10em;
@@ -46,7 +46,7 @@
 .button-submit {
   height: 2em;
   width: 10em;
-  background-color: orange;
+  background-color: #EF8038;
   color: white;
   border-radius: 15px;
   border: none;

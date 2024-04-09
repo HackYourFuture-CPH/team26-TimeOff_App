@@ -33,7 +33,7 @@ const Home = () => {
         <div className="headers-conteiiner">
           <h2 className="main-header">Time Off</h2>
           <h3 className="main-subheader">
-            TimeOff_App is a web application designed to simplify the process of
+            TimeOff is a web application designed to simplify the process of
             managing vacations and time off for teams within a company. It
             provides a user-friendly interface for creating teams, managing team
             members, and tracking their time off.
