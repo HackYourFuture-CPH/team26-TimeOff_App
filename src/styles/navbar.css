@@ -16,10 +16,12 @@
 }
 
 .button-create-team{
-    height: fit-content;
-    width: 6em;
-   background-color: orange;
-   color: white;
-   border-radius: 25%;
-   border: none;
+    height: 2em;
+    width: 10em;
+    background-color: orange;
+    color: white;
+    border-radius: 15px;
+    border: none;
+    text-decoration: none;
+    font-weight: 600;
 }
