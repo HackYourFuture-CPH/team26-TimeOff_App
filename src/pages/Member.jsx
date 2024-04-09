@@ -1,13 +1,5 @@
-// Like the team page, member page has the following:
-// Member name:
-// Member allowed days off:
-// Member booked days off:
-// Edit + delete booked days off.
-// and a button to CreateTimeoff.
-
-
 import React, { useState, useEffect } from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 import { apiPath } from '../api';
 import MemberDetails from "../component/MemberDetails";

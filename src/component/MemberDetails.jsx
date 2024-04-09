@@ -1,4 +1,5 @@
 import CreateTimeoff from "./CreateTimeoff";
+import DeleteMember from "./DeleteMember";
 
 
 function MemberDetails({ member }) {
@@ -12,7 +13,10 @@ function MemberDetails({ member }) {
         {member.assigned_dayoff >= member.allowed_dayoff ? (
           <p>You have used all your allowed days off. 😞</p>
         ) : (
+          <>
           <CreateTimeoff memberId={member.id} maxDaysoff={member.allowed_dayoff} />
+          <DeleteMember memberId={member.id} />
+          </>
         )}
       </div>
     </div>

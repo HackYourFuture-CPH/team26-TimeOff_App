@@ -1,8 +1,8 @@
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 import React from 'react'
 import {apiPath} from "../api"
 const DeleteMember = ({ memberId }) => {
-    const navigate = useNavigate();
+    // const navigate = useNavigate();
 
     const handleDeleteMember = async () => {
         try {
@@ -17,7 +17,7 @@ const DeleteMember = ({ memberId }) => {
           if (!response.ok) {
             throw new Error('Failed to delete member');
         } else {
-            navigate(`/team/${randomCode}`);
+            // navigate(`/team/${randomCode}`);
         }
     } catch (error) {
         console.error(error); 
@@ -25,7 +25,8 @@ const DeleteMember = ({ memberId }) => {
 };
   return (
     <div>
-        <button onClick={handleDeleteMember(memberId)}>Delete</button>                
+
+        <button className="delete-button" onClick={() => handleDeleteMember(memberId)}>Delete</button>                
          
         
     </div>
