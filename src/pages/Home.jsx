@@ -3,6 +3,7 @@ import SubmitTeam from "../component/SubmitTeam";
 import { apiPath } from "../api";
 import Navbar from "./Navbar";
 import "../styles/home.css";
+import Testimonials from "../component/Testimonials";
 
 const Home = () => {
   const [teamsDatabase, setTeamsDatabase] = useState([]);
@@ -43,6 +44,10 @@ const Home = () => {
         <div className="main-image-conteiner">
           <img src="/logo.svg" alt="main-image" className="img-main" />
         </div>
+      </section>
+
+      <section className="testimonials-conteiner">
+      <Testimonials />
       </section>
     </div>
   );
