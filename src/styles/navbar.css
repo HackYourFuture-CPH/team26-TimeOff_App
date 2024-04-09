@@ -1,0 +1,25 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: #333;
+  color: white;
+}
+
+.logo{
+    height: 2em;
+}
+
+.navbar-text{
+    margin: 1em;
+}
+
+.button-create-team{
+    height: fit-content;
+    width: 6em;
+   background-color: orange;
+   color: white;
+   border-radius: 25%;
+   border: none;
+}

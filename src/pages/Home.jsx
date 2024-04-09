@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import SubmitTeam from '../component/SubmitTeam';
 import { apiPath } from '../api';
 import '../index.css';
 import CreateMember from '../component/CreateMember';
-import CreateTeam from '../component/CreateTeam';
-// import DeleteTeam from '../component/DeleteTeam';
+import Navbar from './Navbar';
+
 
 const Home = () => {
   const [teamsDatabase, setTeamsDatabase] = useState([]);
@@ -28,13 +28,15 @@ const Home = () => {
   };
 
   return (
+
+    <div className='home-conteiner'>  <Navbar />   
     <div className="top-Header">
       <h2>Time Off</h2>
       <SubmitTeam teamsDatabase={teamsDatabase} />
       <CreateMember teamsDatabase={teamsDatabase} />
-      <CreateTeam setTeamsDatabase={setTeamsDatabase} />
-      {/* <DeleteTeam teamsDatabase={teamsDatabase} setTeamsDatabase={setTeamsDatabase} /> */}
+      
     </div>
+    </div>  
   );
 };
 
