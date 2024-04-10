@@ -1,5 +1,7 @@
 body {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
@@ -11,6 +13,20 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+/* Defalut color for light theme */
+.App {
+  width: 100vw;
+  min-height: 100vh;
+  background: #ced8ff;
+  transition: 0.5s;
+}
+
+/* Dark theme color */
+.App.dark {
+  background: #222;
+}
+
 
 /* Style for the h2 heading */
 .top-Header h2{
@@ -91,22 +107,3 @@ code {
   background-color: #044627;
 }
 
-/* Navbar Styling  */
-.header {
-  width: 100%;
-  height: 40px;
-  background: #b9d3de;
-  position: sticky;
-  top: 0;
-  left: 0;
-  padding : 20px 0px;
-}
-
- .container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 100%;
-  padding-bottom: 16px;
-  padding-left: 20px;
-}
