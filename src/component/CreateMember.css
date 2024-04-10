@@ -1,0 +1,24 @@
+.create-member {
+  margin: 0;
+  padding: 0;
+} 
+
+.create-member .create-button-member {
+  background-color: #078d14; /* Button background color */
+  padding: 10px;
+  margin: 20px;
+  color: #fff; 
+  border: none; 
+  cursor: pointer;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 15px;
+  width: 90%;
+  align-items: center;
+}
+
+/* Style for the buttons on hover */
+.create-member .create-button-member:hover {
+  background-color: #055837;
+  color: white;
+}

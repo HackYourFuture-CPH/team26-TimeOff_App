@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import '../index.css';
+import './CreateMember.css';
 // use this format if fetching
 import { apiPath } from '../api';
 // fetch(apiPath('/teams'))
@@ -53,9 +53,9 @@ function CreateMember({teamsDatabase }) {
   };
 
   return (
-    <div>
+    <div className="create-member">
       {!isFormVisible && (
-        <button className="create-button" onClick={() => setIsFormVisible(true)}>Create Member</button>
+        <button className="create-button-member" onClick={() => setIsFormVisible(true)}>Create Member</button>
       )}
       {isFormVisible && (
         <form onSubmit={handleSubmit} className="member-form">

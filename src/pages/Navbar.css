@@ -3,7 +3,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: #fff;
+  background-color: #c4f6f2;
   padding: 15px 7%;
   transition: 0.5s;
 }
@@ -17,6 +17,8 @@ ul{
   flex: 1;
   list-style: none;
   text-align: center;
+  margin: 0;
+  padding: 0;
 }
 
 ul li{
@@ -43,9 +45,11 @@ ul li a {
 .search-box{
   display: flex;
   align-items: center;
-  background: #242424;
+  background: #c4f6f2;
   padding: 10px 20px;
   border-radius: 50px;
+  border-style:solid;
+  border-width: 2.5px;
 }
 
 .search-box input{
@@ -53,13 +57,13 @@ ul li a {
   background: transparent;
   border: 0;
   outline: 0;
-  color: white;
+  color: rgb(15, 14, 14);
   font-size: 18px;
   max-width: 200px;
 }
 
 .search-box input::placeholder{
-  color: #fff;
+  color: #0c0c0c;
 }
 
 .search-box img{

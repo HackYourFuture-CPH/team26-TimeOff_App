@@ -17,9 +17,11 @@ code {
 /* Defalut color for light theme */
 .App {
   width: 100vw;
-  min-height: 100vh;
-  background: #ced8ff;
+  height: 100vh;
+  background: #131111;
   transition: 0.5s;
+  background-image: url("./img/home/imgBg.jpg");
+  background-size: 100vw;
 }
 
 /* Dark theme color */
@@ -28,82 +30,5 @@ code {
 }
 
 
-/* Style for the h2 heading */
-.top-Header h2{
-  font-family: 'EB Garamond', serif; /* Use a serif font for a classical feel */
-  font-size: 40px; /* Adjust the font size for mobile */
-  font-weight: bold; /* Make the text bold */
-  color: #0f0b0b; /* Text color */
-  text-align: center; /* Center align the text */
-  text-shadow: 5px 5px 5px grey;
-  margin: 0px; /* Reduce the bottom margin for mobile */
-  padding-top: 80px; /* Reduce the padding below the border line for mobile */
-  padding-bottom: 20px; /* Reduce the padding below the border line for mobile */
-}
 
-.submitTeam-container {
-  display: flex; 
-  justify-content: center;
-  padding: 10px 0px;
-  margin: 10px 0px;
-}
-
-/* Style for the label */
-.submitTeam-container label {
-  font-size: 20px;
-  font-weight: bold; 
-  text-align: center;
-  padding-right: 10px;
-  padding-top: 2px;
-  text-shadow: none;
-}
-
-/* Style for the input field */
-.submitTeam-container input[type="text"] {
-  box-sizing: border-box;
-  width: 25%; 
-  border: 2px solid ;
-  border-radius: 15px; 
-  border-color: #007bff; 
-  text-align: center;
-  font-size: 15px;
-}
-
-/* Style for the buttons */
-.submitTeam-container button {
-  background-color: #007bff; /* Button background color */
-  padding: 10px;
-  margin-left: 10px;
-  color: #fff;
-  border: none; 
-  cursor: pointer; 
-  border-radius: 5px;
-  text-align: center;
-  font-size: 15px;
-  width: 10%;
-}
-
-/* Style for the buttons on hover */
-.submitTeam-container button:hover {
-  background-color: #04376d; /* Darker background color on hover */
-}
-
-.create-button {
-  background-color: #078d14; /* Button background color */
-  padding: 10px;
-  margin-right: 40px;
-  color: #fff; 
-  border: none; 
-  cursor: pointer;
-  border-radius: 5px;
-  text-align: center;
-  font-size: 15px;
-  width: 10%;
-  align-items: center;
-}
-
-/* Style for the buttons on hover */
-.create-button:hover {
-  background-color: #044627;
-}
 
