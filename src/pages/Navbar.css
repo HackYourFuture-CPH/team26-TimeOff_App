@@ -1,0 +1,61 @@
+/* Navbar Styling  */
+  .header {
+    width: 100%;
+    height: 10rem;
+    display: grid;
+    grid-template-columns: 10rem 1fr 2fr 1fr 10rem;
+    box-shadow: rgba(11, 11, 13, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+    background-color: rgb(124, 157, 157);
+  }
+
+  .logo {
+    display: flex;
+    grid-column: 2/3;
+    justify-content: start;
+    align-items: center;
+  }
+  
+ 
+  .menu-links {
+    grid-column: 3/4;
+  }
+
+  .menu-links ul {
+    display: flex;
+    height: 10rem;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+    font-size: 20px;
+  }
+
+  .create-team {
+    grid-column: 4/5;
+  }
+
+/* ----------- Grid part ends ----------------- */
+
+.menu-link ul li {
+  font-size: 1.9rem;
+}
+
+.menu-links ul li a {
+  text-transform: capitalize;
+  color: rgba(0, 0, 3, 0.8);
+  transition: 0.5s;
+}
+.menu-links ul li:hover > a {
+  transform-origin: left;
+  color: rgb(16, 16, 211);
+  text-decoration: underline;
+  transition: 0.5s;
+}
+
+  a {
+    text-decoration: none;
+  }
+
+  li {
+    list-style: none;
+  }

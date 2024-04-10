@@ -1,0 +1,12 @@
+/* Style for the h2 heading */
+.top-Header h2{
+  font-family: 'EB Garamond', serif; /* Use a serif font for a classical feel */
+  font-size: 40px; /* Adjust the font size for mobile */
+  font-weight: bold; /* Make the text bold */
+  color: #0f0b0b; /* Text color */
+  text-align: center; /* Center align the text */
+  text-shadow: 5px 5px 5px grey;
+  margin: 0px; /* Reduce the bottom margin for mobile */
+  padding-top: 80px; /* Reduce the padding below the border line for mobile */
+  padding-bottom: 20px; /* Reduce the padding below the border line for mobile */
+}

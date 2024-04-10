@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import '../index.css';
+import './SubmitTeam.css';
+
 
 
 const SubmitTeam = ({ teamCode, teamsDatabase }) => {

@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react';
 import SubmitTeam from '../component/SubmitTeam';
 import CreateTeam from '../component/CreateTeam';
-import '../index.css';
+import './main.css';
+
 
 const Main = () => {
   const [teamCode, setTeamCode] = useState('');

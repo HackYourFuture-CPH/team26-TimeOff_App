@@ -1,3 +1,6 @@
+import './CreateTeam.css';
+
+
 const CreateTeam = ({ setTeamsDatabase, setTeamCode }) => {
   const handleCreateTeam = async () => {
     try {
