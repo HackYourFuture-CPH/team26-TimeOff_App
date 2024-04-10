@@ -1,4 +1,4 @@
-import '../index.css';
+import './CreateTeam.css';
 import { apiPath } from '../api';
 
 const CreateTeam = ({ setTeamsDatabase }) => {
@@ -32,7 +32,7 @@ const CreateTeam = ({ setTeamsDatabase }) => {
     }
   };
   return (
-    <button className="create-button" onClick={handleCreateTeam}>Create Team</button>
+    <button className="create-button-team" onClick={handleCreateTeam}>Create Team</button>
   );
 };
 

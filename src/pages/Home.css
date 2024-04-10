@@ -1,0 +1,68 @@
+/* Style for the h2 heading */
+.mainSection {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.top-Header {
+  padding: 2rem;
+  width: 40%;
+}
+
+.top-Header h2 {
+  font-family: 'EB Garamond', serif; 
+  font-size: 40px; 
+  font-weight: bold; 
+  color: #0f0b0b; 
+  text-align:left; 
+  text-shadow: 5px 5px 5px #808080;
+  margin: 0px;
+  padding-left: 10rem;
+}
+
+.top-Header p {
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif, 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 1.2rem;
+  margin: 1rem 0; 
+}
+
+.top-Header .create-container{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+}
+
+.imgContainer {
+  width: 50%;
+}
+
+.imgContainer img{
+  width: 90%;
+  display: block;
+  padding: 2.5rem;
+
+}
+
+.dark .top-Header h2{
+  color: #f7f3cc;
+  text-shadow: 2px 2px 2px #eff192;
+
+}
+
+.dark .top-Header p {
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif, 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 1.2rem;
+  margin: 1rem 0; 
+  color: cornsilk;
+}
+
+
+.dark .imgContainer img{
+  width: 90%;
+  margin: 0 0;
+  display: block;
+  padding: 2.5rem;
+}

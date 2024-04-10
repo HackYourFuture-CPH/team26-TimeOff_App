@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import '../index.css';
+import './SubmitTeam.css';
 // use this format if fetching
 import { apiPath } from '../api';
 // fetch(apiPath('/teams'))

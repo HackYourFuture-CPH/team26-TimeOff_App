@@ -1,0 +1,18 @@
+.create-button-team {
+  background-color: #890aad; /* Button background color */
+  padding: 10px;
+  margin: 20px;
+  color: #fff; 
+  border: none; 
+  cursor: pointer;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 15px;
+  width: 35%;
+  align-items: center;
+}
+
+/* Style for the buttons on hover */
+.create-button-team:hover {
+  background-color: #4c095d;
+}

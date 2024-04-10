@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import SubmitTeam from '../component/SubmitTeam';
 import { apiPath } from '../api';
-import '../index.css';
+import './Home.css';
 import CreateMember from '../component/CreateMember';
 import CreateTeam from '../component/CreateTeam';
+import imgTop from '../img/home/imgTop.png'
 // import DeleteTeam from '../component/DeleteTeam';
 
-const Home = () => {
+const Home = ({theme, setTheme}) => {
   const [teamsDatabase, setTeamsDatabase] = useState([]);
 
   useEffect(() => {
@@ -28,12 +29,23 @@ const Home = () => {
   };
 
   return (
-    <div className="top-Header">
-      <h2>Time Off</h2>
-      <SubmitTeam teamsDatabase={teamsDatabase} />
-      <CreateMember teamsDatabase={teamsDatabase} />
-      <CreateTeam setTeamsDatabase={setTeamsDatabase} />
-      {/* <DeleteTeam teamsDatabase={teamsDatabase} setTeamsDatabase={setTeamsDatabase} /> */}
+    <div className="mainSection">
+      <div className="top-Header">
+        <h2>Time Off</h2>
+        <p>
+          TimeOff_App is a web application designed to simplify the process of managing vacations and time off for teams within a company. 
+          It provides a user-friendly interface for creating teams, managing team members, and tracking their time off.
+        </p>
+        <SubmitTeam teamsDatabase={teamsDatabase} />
+        <div className='create-container'>
+          <CreateMember teamsDatabase={teamsDatabase} />
+          <CreateTeam setTeamsDatabase={setTeamsDatabase} />
+        </div>
+        {/* <DeleteTeam teamsDatabase={teamsDatabase} setTeamsDatabase={setTeamsDatabase} /> */}
+      </div>
+      <div className='imgContainer'>
+        <img src={imgTop} alt=""></img>
+      </div>
     </div>
   );
 };
