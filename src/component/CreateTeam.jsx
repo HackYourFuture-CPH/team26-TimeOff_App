@@ -1,5 +1,6 @@
 import '../index.css';
 import { apiPath } from '../api';
+import '../styles/navbar.css'; 
 
 const CreateTeam = ({ setTeamsDatabase }) => {
   const handleCreateTeam = async () => {
@@ -32,7 +33,7 @@ const CreateTeam = ({ setTeamsDatabase }) => {
     }
   };
   return (
-    <button className="create-button" onClick={handleCreateTeam}>Create Team</button>
+    <button className="button-create-team" onClick={handleCreateTeam}>Create Team</button>
   );
 };
 

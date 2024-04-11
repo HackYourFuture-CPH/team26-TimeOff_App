@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Member from "./Member";
-// use this format if fetching
 import { apiPath } from '../api';
-// fetch(apiPath('/teams'))
+
 const MembersList = ({teamId}) => {
   const [members, setMembers] = useState([]);
   const [loading, setLoading] = useState(true);

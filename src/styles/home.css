@@ -1,0 +1,59 @@
+.main-header {
+  margin: 1em;
+  font-style: italic;
+}
+
+.main-subheader {
+  margin: 1em;
+  font-weight: 200;
+}
+
+.main-section{
+    display: flex;
+}
+
+.main-image-conteiner{
+    margin: 5em;
+}
+
+#teamCodeInput {
+  margin: 1em;
+  border-radius: 15px;
+  border: 2px solid #EF8038;
+  text-align: center;
+  height: 2em;
+  width: 10em;
+  outline: none;
+}
+
+#teamCodeInput::placeholder {
+  text-align: center;
+  color: gray;
+}
+
+#teamCodeInput:focus::placeholder {
+  color: transparent; 
+}
+
+.submitTeam-container {
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  margin: 2em;
+  align-items: center;
+}
+
+.button-submit {
+  height: 2em;
+  width: 10em;
+  background-color: #EF8038;
+  color: white;
+  border-radius: 15px;
+  border: none;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.testimonials-conteiner{
+    margin: 3em 0em;
+}
