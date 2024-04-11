@@ -4,6 +4,7 @@ import { apiPath } from "../api";
 import Navbar from "./Navbar";
 import "../styles/home.css";
 import Testimonials from "../component/Testimonials";
+import About from "../component/About";
 
 const Home = () => {
   const [teamsDatabase, setTeamsDatabase] = useState([]);
@@ -49,6 +50,8 @@ const Home = () => {
       <section className="testimonials-conteiner">
       <Testimonials />
       </section>
+
+      <section><About /></section>
     </div>
   );
 };
