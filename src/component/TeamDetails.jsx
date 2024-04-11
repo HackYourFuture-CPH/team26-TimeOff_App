@@ -10,7 +10,6 @@ import { apiPath } from '../api';
 
 const TeamDetails = ({ teams }) => {
   const [members, setMembers] = useState([]);
-  const [timeOffs, setTimeOffs] = useState([]);
 
   useEffect(() => {
     if (teams) {
