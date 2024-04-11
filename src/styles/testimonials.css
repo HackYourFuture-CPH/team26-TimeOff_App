@@ -1,5 +1,6 @@
 .carousel-root {
-  width: 64%;
+  display: flex;
+  width: 30em;
   margin: auto;
   margin-top: 3%;
 }

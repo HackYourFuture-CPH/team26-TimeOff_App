@@ -31,8 +31,8 @@ const Home = () => {
     <div className="home-conteiner">
       <Navbar />
       <section className="main-section">
-        <div className="headers-conteiiner">
-          <h2 className="main-header">Time Off</h2>
+        <div className="headers-conteiner">
+          <h2 className="main-header">TimeOff</h2>
           <h3 className="main-subheader">
             TimeOff is a web application designed to simplify the process of
             managing vacations and time off for teams within a company. It
