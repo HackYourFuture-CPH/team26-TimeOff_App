@@ -4,10 +4,17 @@ import { apiPath } from "../api";
 import Navbar from "./Navbar";
 import "../styles/home.css";
 import Testimonials from "../component/Testimonials";
+import PriceCard from "../component/PriceCard";
 import About from "../component/About";
 
 const Home = () => {
   const [teamsDatabase, setTeamsDatabase] = useState([]);
+  const current_theme = localStorage.getItem('current_theme');  // This will store the default theme of web browser
+  const [theme, setTheme] = useState(current_theme ? current_theme : 'light'); // Created constant for dark mode
+
+  useEffect (()=>{
+    localStorage.setItem('current_theme', theme);
+  },[theme]);
 
   useEffect(() => {
     fetchTeams();
@@ -28,8 +35,8 @@ const Home = () => {
   };
 
   return (
-    <div className="home-conteiner">
-      <Navbar />
+    <div className={`home-conteiner ${theme}`}>
+      <Navbar theme={theme} setTheme={setTheme} />
       <section className="main-section">
         <div className="headers-conteiner">
           <h2 className="main-header">TimeOff</h2>
@@ -50,7 +57,7 @@ const Home = () => {
       <section className="testimonials-conteiner">
       <Testimonials />
       </section>
-
+      <section><PriceCard /></section>
       <section><About /></section>
     </div>
   );

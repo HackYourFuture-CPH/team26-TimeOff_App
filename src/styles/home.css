@@ -57,3 +57,25 @@
 .testimonials-conteiner{
     margin: 3em 0em;
 }
+
+.home-conteiner {
+  background: #ffffff;
+  transition: 0.5s;
+}
+
+/* Dark theme color */
+.home-conteiner.dark {
+  background: #000000;
+}
+
+.dark .main-header {
+  color: #ffffff;
+}
+
+.dark .main-subheader {
+  color: #ffffff;
+}
+
+.dark .submitTeam-container {
+  color: #ffffff;
+}

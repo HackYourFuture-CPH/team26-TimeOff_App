@@ -8,3 +8,11 @@
 .about-title{
 color: #EF8038
 }
+
+.dark .about-conteiner{
+    color: #ffffff;
+}
+
+.about-conteiner{
+    border: 1px solid  #EF8038;
+}

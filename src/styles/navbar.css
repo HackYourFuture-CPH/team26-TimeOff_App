@@ -25,3 +25,23 @@
     text-decoration: none;
     font-weight: 600;
 }
+
+.toggle-icon {
+    width: 50px;
+    cursor: pointer;
+    padding-right: 2em;
+}
+
+/* For dark Mode */
+.dark .navbar{
+    background: #000;
+    color: #fff;
+}
+
+.dark ul li a {
+    color: #fff;
+}
+
+.dark .navbar {
+    border: 1px solid #EF8038;
+  }
