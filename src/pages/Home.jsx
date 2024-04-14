@@ -4,7 +4,6 @@ import { apiPath } from '../api';
 import '../index.css';
 import CreateMember from '../component/CreateMember';
 import CreateTeam from '../component/CreateTeam';
-// import DeleteTeam from '../component/DeleteTeam';
 
 const Home = () => {
   const [teamsDatabase, setTeamsDatabase] = useState([]);
@@ -33,7 +32,7 @@ const Home = () => {
       <SubmitTeam teamsDatabase={teamsDatabase} />
       <CreateMember teamsDatabase={teamsDatabase} />
       <CreateTeam setTeamsDatabase={setTeamsDatabase} />
-      {/* <DeleteTeam teamsDatabase={teamsDatabase} setTeamsDatabase={setTeamsDatabase} /> */}
+      <Calendar />
     </div>
   );
 };
