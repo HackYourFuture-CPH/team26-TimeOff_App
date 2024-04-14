@@ -89,7 +89,7 @@ function CreateMember({teamsDatabase }) {
           <div>
             <label>Allowed days off:</label>
             <input
-              type="integar"
+              type="number"
               value={dayOff}
               onChange={(e) => setdayOff(e.target.value)}
             />

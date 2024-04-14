@@ -13,6 +13,7 @@ router.get('/', async (req, res) => {
 });
 
 router.post("/:id", async (request, response) => {
+  const {id} = request.params;
   const { start_date, end_date, description } = request.body; 
   if (!start_date || !end_date || !description) {
     return response.status(400).json({ error: 'Missing required fields' });
@@ -23,6 +24,7 @@ router.post("/:id", async (request, response) => {
     end_date,
     description,
     created_date: new Date(),
+    member_id: id
   };
 
   try {
