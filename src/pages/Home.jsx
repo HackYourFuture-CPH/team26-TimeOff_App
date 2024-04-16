@@ -6,6 +6,7 @@ import "../styles/home.css";
 import Testimonials from "../component/Testimonials";
 import PriceCard from "../component/PriceCard";
 import About from "../component/About";
+import Footer from "./Footer";
 
 const Home = () => {
   const [teamsDatabase, setTeamsDatabase] = useState([]);
@@ -35,10 +36,10 @@ const Home = () => {
   };
 
   return (
-    <div className={`home-conteiner ${theme}`}>
+    <div className={`home-container ${theme}`}>
       <Navbar theme={theme} setTheme={setTheme} />
       <section className="main-section">
-        <div className="headers-conteiner">
+        <div className="headers-container">
           <h2 className="main-header">TimeOff</h2>
           <h3 className="main-subheader">
             TimeOff is a web application designed to simplify the process of
@@ -49,16 +50,18 @@ const Home = () => {
 
           <SubmitTeam teamsDatabase={teamsDatabase} />
         </div>
-        <div className="main-image-conteiner">
-          <img src="/logo.svg" alt="main-image" className="img-main" />
+        <div className="main-image-container">
+          <img src="/imgTop.png" alt="main-image" className="img-main" />
         </div>
       </section>
 
-      <section className="testimonials-conteiner">
+      <section className="testimonials-container">
+      <h2 className="testim-header">Meet Our Team</h2>
       <Testimonials />
       </section>
-      <section><PriceCard /></section>
       <section><About /></section>
+      <section><PriceCard /></section>
+      <section><Footer /></section>
     </div>
   );
 };

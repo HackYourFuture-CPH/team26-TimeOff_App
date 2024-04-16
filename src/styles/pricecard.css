@@ -1,18 +1,19 @@
-.price-conteiner{
+.price-container{
   min-height: 80vh;
-  /* background-color: aqua; */
 }
 
-.price-conteiner h2{
+.price-container h2{
   color: #000000;
   font-size: 2em;
   padding: 1em 0;
   font-style: italic;
   text-align: center;
+  font-family: 'Poppins';
+
 }
 
 /* For Dark Mode */
-.dark .price-conteiner h2{
+.dark .price-container h2{
   color: #ffffff;
 }
 .price-row {
@@ -35,13 +36,14 @@
 .price-col p{
   font-size: 30px;
   font-weight: bold;
-  font-family: 'Courier New', Courier, monospace;
+  font-family: 'Poppins';
 }
 
 .price-col h3 {
   font-size: 40px;
   margin: 20px 0 40px;
   font-weight: 200;
+  font-family: 'Poppins';
 }
 
 .price-col h3 span{
@@ -58,6 +60,8 @@
 
 .price-col ul li{
   margin: 15px 0;
+  font-family: 'Poppins';
+
 }
 
 .price-col ul li::before{

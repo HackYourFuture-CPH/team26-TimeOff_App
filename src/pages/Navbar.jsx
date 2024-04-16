@@ -40,7 +40,7 @@ function Navbar({theme, setTheme}) {
         <span className="navbar-text">Pricing</span>
       </div>
 
-      <div className="conteiner-create-team">
+      <div className="container-create-team">
         <CreateTeam setTeamsDatabase={setTeamsDatabase} />
       </div>
 

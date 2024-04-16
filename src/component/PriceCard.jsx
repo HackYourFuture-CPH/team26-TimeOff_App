@@ -2,8 +2,8 @@ import "../styles/pricecard.css";
 
 function PriceCard() {
   return (
-    <div className="price-conteiner">
-      <h2>Select your plan</h2>
+    <div className="price-container">
+      <h2>Get best price for your team</h2>
       <div className="price-row">
         <div className="price-col">
           <p>Basic</p>
