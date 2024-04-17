@@ -1,56 +1,67 @@
+import React, { useState } from "react";
 import "../styles/pricecard.css";
+import { Link } from "react-router-dom";
 
-function PriceCard() {
+const PriceCard = () => {
+  const [isMonthly, setIsMonthly] = useState(true);
+  const startFreeTrial = () => {
+    alert('Start Free Trial clicked!'); 
+  };
+
+  const togglePricing = () => {
+    setIsMonthly(!isMonthly);
+  };
+
+  const pricingData = [
+    {
+      id: 1,
+      name: "Basic",
+      monthlyPrice: "50 dkk",
+      annuallyPrice: "550 dkk",
+      features: ["Max 5 Users", "Max 1 Department", "Max 5 Teams", "iPhone & Android App", "Customer Support"],
+      
+    },
+    {
+      id: 2,
+      name: "Advanced",
+      monthlyPrice: 100 ,
+      annuallyPrice: 1050,
+      features: ["Unlimited Employees", "Max 5 Department", "Unlimited Teams", "Time Tracking", "Plus Basic Features"],
+    },
+    {
+      id: 3,
+      name: "Professional",
+      monthlyPrice: 150,
+      annuallyPrice: 1500,
+      features: ["Shift Exchange", "Unlimited Department", "Budget Management", "Priority Support", "Plus Basic & Advanced Features"],
+    },
+  ];
+
   return (
-    <div className="price-container">
-      <h2>Get best price for your team</h2>
-      <div className="price-row">
-        <div className="price-col">
-          <p>Basic</p>
-          <h3> 199dkk <span>/ month</span></h3>
-          <ul>
-            <li>Max 5 Users</li>
-            <li>Max 1 Department</li>
-            <li>Max 5 Teams</li>
-            <li>iPhone & Android App</li>
-            <li>Customer support</li>
-          </ul>
-          <button>Start Free Trial</button>
-        </div>
-        <div className="price-col">
-          <p>Advanced</p>
-          <h3> 299dkk <span>/ month</span></h3>
-          <ul>
-            <li>Unlimited Employees</li>
-            <li>Max 5 Department</li>
-            <li>Unlimited Teams</li>
-            <li>iPhone & Android App</li>
-            <li>Customer support</li>
-            <li>Time Tracking</li>
-            <li>Shift Exchange</li>
-          </ul>
-          <button>Start Free Trial</button>
-        </div>
-        <div className="price-col">
-          <p>Premium</p>
-          <h3> 399dkk <span>/ month</span></h3>
-          <ul>
-            <li>Unlimited Employees</li>
-            <li>Unlimited Department</li>
-            <li>Unlimited Teams</li>
-            <li>Budget Management</li>
-            <li>Custom Absence Types</li>
-            <li>iPhone & Android App</li>
-            <li>Customer support</li>
-            <li>Time Tracking</li>
-            <li>Shift Exchange</li>
-            <li>Skill Management</li>
-          </ul>
-          <button>Start Free Trial</button>
-        </div>
+    <div className="pricing-container" id="pricing">
+       <h2 className="price-heading">Choose your pricing plan</h2>
+      <div className="toggle-container">
+      
+        <button onClick={togglePricing}>
+          {isMonthly ? "Switch to Annually" : "Switch to Monthly"}
+        </button>
+      </div>
+      <div className="pricing-tables">
+        {pricingData.map((plan) => (
+          <div key={plan.id} className="pricing-plan">
+            <h2>{plan.name}</h2>
+            <h3>{isMonthly ? `Dkk ${plan.monthlyPrice}  / month` : `Dkk ${plan.annuallyPrice}  / year`}</h3>
+            <ul>
+              {plan.features.map((feature, index) => (
+                <li key={index}>{feature}</li>
+              ))}
+            </ul>
+            <button onClick={startFreeTrial}>Start Free Trial</button>
+          </div>
+        ))}
       </div>
     </div>
   );
-}
+};
 
 export default PriceCard;

@@ -19,7 +19,7 @@ const Footer = () => {
             <li>Help Center</li>
           </ul>
         </div>
-        <div className="contact-col">
+        <div className="contact-col" id="contact">
           <h3>Contact Us</h3>
           <ul>
             <li><MdLocationOn />Enghavevej 80C, Sal 3 2450 København </li>

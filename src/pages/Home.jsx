@@ -10,8 +10,8 @@ import Footer from "./Footer";
 
 const Home = () => {
   const [teamsDatabase, setTeamsDatabase] = useState([]);
-  const current_theme = localStorage.getItem('current_theme');  // This will store the default theme of web browser
-  const [theme, setTheme] = useState(current_theme ? current_theme : 'light'); // Created constant for dark mode
+  const current_theme = localStorage.getItem('current_theme');
+  const [theme, setTheme] = useState(current_theme ? current_theme : 'light');
 
   useEffect (()=>{
     localStorage.setItem('current_theme', theme);

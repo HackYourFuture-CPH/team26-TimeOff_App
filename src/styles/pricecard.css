@@ -1,93 +1,108 @@
-.price-container{
-  min-height: 80vh;
-}
 
-.price-container h2{
-  color: #000000;
-  font-size: 2em;
-  padding: 1em 0;
-  font-style: italic;
+.pricing-container {
+  width: 90%;
+  margin: auto;
   text-align: center;
-  font-family: 'Poppins';
-
+  margin-bottom: 2em;
 }
 
-/* For Dark Mode */
-.dark .price-container h2{
+.pricing-plan button {
+  display: inline-block; 
+  margin-top: 10px; 
+  background-color: #007bff;
+  padding: 10px 20px;
+  border-radius: 5px;
   color: #ffffff;
-}
-.price-row {
-  display: flex;
-  justify-content: space-around;
-  margin: 2em 10em;
-}
-
-.price-col{
-  background-color:#ffffff;
-  padding: 1em 2.5em;
-  border-radius: 10px;
-  color: #000000;
-  text-align: center;
-  border: 4px solid  #EF8038;
-  transition: background 0.5s;
+  cursor: pointer;
   
 }
 
-.price-col p{
-  font-size: 30px;
-  font-weight: bold;
-  font-family: 'Poppins';
-}
-
-.price-col h3 {
-  font-size: 40px;
-  margin: 20px 0 40px;
-  font-weight: 200;
-  font-family: 'Poppins';
-}
-
-.price-col h3 span{
-  font-size: 16px;
-}
-
-.price-col ul{
-  text-align: left;
-  margin: 0 0;
+.pricing-plan button:hover{
+  background-color: #042853;
   color: #000000;
-  list-style: none;
+}
+
+.pricing-container .price-heading {
+  margin-bottom: 20px;
+  font-style: italic;
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-size: 2em;
+  font-weight: 800;
+}
+
+.toggle-container button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.toggle-container button:hover {
+  background-color: #0056b3;
+}
+
+.pricing-tables {
+  display: flex;
+  justify-content: space-around;
+  margin: 2em 0;
   padding: 0;
 }
 
-.price-col ul li{
-  margin: 15px 0;
-  font-family: 'Poppins';
-
+.pricing-plan {
+  flex: 1;
+  border: 1px solid #eb790e;
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+  flex-direction: column;
+  justify-content: center;
+  margin: 2em;
+  margin-top: 10px;
+  background: #b5e6f9;
 }
 
-.price-col ul li::before{
-  content: '\2022';
-  color: #000000;
+.pricing-plan h2 {
+  margin: 10px 0;
+  font-size: 1.5rem;
+  color: #333;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.pricing-plan h3 {
+  color: #524545;
+  font-size: 1.25rem;
+  margin-bottom: 15px;
   font-weight: bold;
-  margin-right: 8px;
+  font-family: 'Poppins';
 }
 
-.price-col button{
-  width: 12em;
-  padding: 14px 0;
-  background-color: rgb(86, 211, 86);
+.pricing-plan ul {
+  list-style: none;
+  padding: 0;
+  text-align: center;
+  margin: 0 ;
+  font-family: 'Poppins';
+}
+
+.pricing-plan ul li {
+  margin-bottom: 8px;
   color: #000000;
-  font-size: 15px;
-  border: 1px solid #000000;
-  border-radius: 6px;
-  margin-top: 30px;
-  cursor: pointer;
-  transition: background 0.5s;
 }
 
-.price-col:hover{
+.pricing-plan:hover{
   background: #ffc99e;
 } 
 
-.price-col button:hover{
+.pricing-plan button:hover{
   background: #ffffff;
 }  
+
+.dark .pricing-container h2 {
+  color: #ffffff;
+}
+
+.dark .pricing-plan h2 {
+  color: #333;
+}

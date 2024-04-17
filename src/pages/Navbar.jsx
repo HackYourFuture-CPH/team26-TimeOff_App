@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import CreateTeam from '../component/CreateTeam';
 import { apiPath } from '../api';
 import '../styles/navbar.css'; 
+import { HashLink as Link } from "react-router-hash-link";
 
 function Navbar({theme, setTheme}) {
   const [teamsDatabase, setTeamsDatabase] = useState([]);
@@ -33,11 +34,17 @@ function Navbar({theme, setTheme}) {
       <img src="/logo.svg" alt="Logo" className="logo" />
 
       <div className="navbar-center">
-        <span className="navbar-text">About</span>
+        <Link to="#about" smooth>
+          <span className="navbar-text">About</span>
+        </Link>
         <span className="navbar-text">|</span>
-        <span className="navbar-text">Contact</span>
+        <Link to="#contact" smooth>
+          <span className="navbar-text">Contact</span>
+        </Link>
         <span className="navbar-text">|</span>
-        <span className="navbar-text">Pricing</span>
+        <Link to="#pricing" smooth>
+          <span className="navbar-text">Pricing</span>
+        </Link>
       </div>
 
       <div className="container-create-team">
