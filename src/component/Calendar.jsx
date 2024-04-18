@@ -14,17 +14,20 @@ function MyCalendar() {
         const responseEvents = await fetch('http://localhost:4051/api/timeoff');
         const eventsData = await responseEvents.json();
 
+
         const responseMembers = await fetch('http://localhost:4051/api/members');
         const membersData = await responseMembers.json();
 
-       
+
         const formattedEvents = eventsData.map(event => {
           const member = membersData.find(member => member.id === event.member_id);
           const title = member ? `${member.first_name} ${member.last_name}: ${event.description}` : event.description;
+          const backgroundColor = member ? member.color : '#000000'; 
           return {
             start: new Date(event.start_date),
             end: new Date(event.end_date),
-            title: title
+            title: title,
+            backgroundColor: backgroundColor 
           };
         });
 
@@ -35,24 +38,23 @@ function MyCalendar() {
     };
 
     fetchEvents();
-  }, []); 
+  }, []);
 
   return (
     <div>
       <Calendar
         localizer={localizer}
         events={events}
-        views={['month']}
         eventPropGetter={(event, start, end, isSelected) => {
           const style = {
-            backgroundColor: event.color, 
-            borderRadius: '0px', 
-            border: 'none', 
-            fontSize: '10px', 
-            height: '20px', 
-            overflow: 'hidden', 
-            padding: '2px', 
-            margin: '2px' 
+            borderRadius: '0px',
+            border: 'none',
+            fontSize: '10px',
+            height: '20px',
+            overflow: 'hidden',
+            padding: '2px',
+            margin: '2px',
+            backgroundColor: event.backgroundColor 
           };
           return { style };
         }}
