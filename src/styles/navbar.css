@@ -1,21 +1,37 @@
 .navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px;
-  background-color: #333;
-  color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #b5e6f9;
+    color: rgb(0, 0, 0);
 }
 
-.logo{
+.logo {
+    padding-left: 4em;
     height: 2em;
 }
 
-.navbar-text{
-    margin: 1em;
+.navbar-center {
+    padding-left: 18em;
 }
 
-.button-create-team{
+.navbar-center a {
+    text-decoration: none;
+    color: #000000;
+}
+
+.navbar-text {
+    margin: 1em;
+    font-family: 'Poppins';
+    font-size: 1.1em;
+}
+
+.container-create-team {
+    padding-left: 12em;
+}
+
+.button-create-team {
     height: 2em;
     width: 10em;
     background-color: #EF8038;
@@ -24,4 +40,21 @@
     border: none;
     text-decoration: none;
     font-weight: 600;
+}
+
+.toggle-icon {
+    width: 50px;
+    cursor: pointer;
+    padding-right: 2em;
+}
+
+/* For dark Mode */
+.dark .navbar{
+    background: #000;
+    color: #fff;
+    border: 1px solid #EF8038;
+}
+
+.dark ul li a, .dark .navbar-text {
+    color: #ffffff;
 }

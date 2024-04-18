@@ -2,7 +2,7 @@ import "../styles/about.css";
 
 function About() {
   return (
-    <div className="about-conteiner">
+    <div className="about-container" id="about">
       <h3 className="about-title">About Time Off</h3>
       <p className="about-text">
         <strong>TimeOff</strong> is a project born as part of{" "}

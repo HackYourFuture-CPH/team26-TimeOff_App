@@ -4,9 +4,14 @@
   margin: auto;
   margin-top: 3%;
 }
-
 .carousel .slide {
   background: #fff;
+  color: black;
+  height: 100%;
+}
+
+.dark .carousel .slide {
+  background: #000000;
   color: black;
   height: 100%;
 }
@@ -17,7 +22,7 @@
 }
 
 .myCarousel {
-  background: #bbe8ff86;
+  background: #b5e6f9;
   margin-top: -6%;
   width: 23em;
   margin-left: auto;
@@ -26,7 +31,7 @@
   padding-bottom: 8%;
   padding-left: 5%;
   padding-right: 5%;
-  border: 1px solid #86d9fb;
+  border: 1px solid #b5e6f9;
   height: 25em;
 }
 
@@ -51,16 +56,16 @@
   margin-top: 0;
   padding-top: 0;
   font-weight: 500;
-  color: #787878;
+  color: #524e4e;
   font-size: 14px;
 }
 
 .myCarousel p {
   font-weight: 100;
   line-height: 29px;
-  color: #222;
+  color: rgb(0, 0, 0);
   font-size: 15px;
-  font-family: sans-serif;
+  font-family: 'Poppins';
   max-height: 67px;
 }
 

@@ -1,19 +1,25 @@
 .main-header {
-  margin: 1em;
+  margin-top: 4em;
+  margin-left: 1em;
+  margin-right: 1em;
   font-style: italic;
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-size: 2em;
+  font-weight: 800;
 }
 
 .main-subheader {
   margin: 1em;
   font-weight: 200;
+  font-family:'Poppins';
 }
 
 .main-section{
-    display: flex;
+  display: flex;
 }
 
-.main-image-conteiner{
-    margin: 5em;
+.main-image-container{
+  margin: 5em;
 }
 
 #teamCodeInput {
@@ -38,9 +44,20 @@
 .submitTeam-container {
   display: flex;
   flex-direction: column;
-  width: fit-content;
+  width: 90%;
   margin: 2em;
   align-items: center;
+  font-family: 'Poppins';
+}
+
+.submitTeam-container label {
+  font-size: 20px;
+  color: #000000;
+  font-weight: 800;
+}
+
+.dark .submitTeam-container label {
+  color: #ffffff;
 }
 
 .button-submit {
@@ -54,6 +71,36 @@
   font-weight: 600;
 }
 
-.testimonials-conteiner{
+.testimonials-container{
     margin: 3em 0em;
+}
+
+.home-container {
+  background: #ffffff;
+  transition: 0.5s;
+}
+
+.testim-header {
+  margin: 1em;
+  font-style: italic;
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-size: 2em;
+  font-weight: 800;
+}
+
+/* Dark theme color */
+.home-container.dark {
+  background: #000000;
+}
+
+.dark .main-header, .dark .testim-header {
+  color: #ffffff;
+}
+
+.dark .main-subheader {
+  color: #ffffff;
+}
+
+.dark .submitTeam-container {
+  color: #ffffff;
 }

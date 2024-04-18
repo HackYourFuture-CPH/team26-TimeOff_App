@@ -1,10 +1,20 @@
-.about-conteiner{
+.about-container{
     text-align: left;
     border: 1px solid #86d9fb;
     margin: 2em;
     padding: 1em;
+    font-family: 'Poppins';
 }
 
 .about-title{
-color: #EF8038
+color: #EF8038;
+
+}
+
+.dark .about-container{
+    color: #ffffff;
+}
+
+.about-container{
+    border: 1px solid  #EF8038;
 }

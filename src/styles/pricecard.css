@@ -1,0 +1,108 @@
+
+.pricing-container {
+  width: 90%;
+  margin: auto;
+  text-align: center;
+  margin-bottom: 2em;
+}
+
+.pricing-plan button {
+  display: inline-block; 
+  margin-top: 10px; 
+  background-color: #007bff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  color: #ffffff;
+  cursor: pointer;
+  
+}
+
+.pricing-plan button:hover{
+  background-color: #042853;
+  color: #000000;
+}
+
+.pricing-container .price-heading {
+  margin-bottom: 20px;
+  font-style: italic;
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-size: 2em;
+  font-weight: 800;
+}
+
+.toggle-container button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.toggle-container button:hover {
+  background-color: #0056b3;
+}
+
+.pricing-tables {
+  display: flex;
+  justify-content: space-around;
+  margin: 2em 0;
+  padding: 0;
+}
+
+.pricing-plan {
+  flex: 1;
+  border: 1px solid #eb790e;
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+  flex-direction: column;
+  justify-content: center;
+  margin: 2em;
+  margin-top: 10px;
+  background: #b5e6f9;
+}
+
+.pricing-plan h2 {
+  margin: 10px 0;
+  font-size: 1.5rem;
+  color: #333;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.pricing-plan h3 {
+  color: #524545;
+  font-size: 1.25rem;
+  margin-bottom: 15px;
+  font-weight: bold;
+  font-family: 'Poppins';
+}
+
+.pricing-plan ul {
+  list-style: none;
+  padding: 0;
+  text-align: center;
+  margin: 0 ;
+  font-family: 'Poppins';
+}
+
+.pricing-plan ul li {
+  margin-bottom: 8px;
+  color: #000000;
+}
+
+.pricing-plan:hover{
+  background: #ffc99e;
+} 
+
+.pricing-plan button:hover{
+  background: #ffffff;
+}  
+
+.dark .pricing-container h2 {
+  color: #ffffff;
+}
+
+.dark .pricing-plan h2 {
+  color: #333;
+}
