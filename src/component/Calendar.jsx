@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Calendar, dayjsLocalizer } from 'react-big-calendar';
 import dayjs from 'dayjs';
 
@@ -11,15 +11,13 @@ function MyCalendar() {
   useEffect(() => {
     const fetchEvents = async () => {
       try {
-        // Obtener datos de los eventos
         const responseEvents = await fetch('http://localhost:4051/api/timeoff');
         const eventsData = await responseEvents.json();
 
-        // Obtener datos de los miembros
         const responseMembers = await fetch('http://localhost:4051/api/members');
         const membersData = await responseMembers.json();
 
-        // Mapear los eventos y completar el título con información de los miembros
+       
         const formattedEvents = eventsData.map(event => {
           const member = membersData.find(member => member.id === event.member_id);
           const title = member ? `${member.first_name} ${member.last_name}: ${event.description}` : event.description;
@@ -38,7 +36,7 @@ function MyCalendar() {
 
     fetchEvents();
   }, []); 
-  
+
   return (
     <div>
       <Calendar
