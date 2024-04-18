@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import MembersList from "../component/MembersList"; 
 import { apiPath } from '../api';
+import MyCalendar from "../component/Calendar";
 
 
 const Team = () => {
@@ -47,10 +48,15 @@ const Team = () => {
   }
 
     return (
+   <>
     <div>
       <h2>{team.team_name}</h2>
       <MembersList teamId={team.id} /> 
     </div>
+    
+    <MyCalendar/>
+    </>
+
   );
 };
 
