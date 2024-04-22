@@ -4,9 +4,11 @@ import { apiPath } from '../api';
 import { MyContext } from '../component/Context';
 
 function CreateMember() {
-  const { codeTeam } = useParams();
+  const { code } = useParams(); 
   const contextData = useContext(MyContext);
   const teams = contextData.teams;
+
+  console.log(code)
 
   const [teamId, setTeamId] = useState(null);
   const [memberData, setMemberData] = useState({
@@ -18,13 +20,13 @@ function CreateMember() {
   });
 
   useEffect(() => {
-    const team = teams.find(team => team.code_team === codeTeam);
+    const team = teams.find(team => team.team_code === code);
     if (team) {
       setTeamId(team.id);
     } else {
-      console.error(`Team with code_team '${codeTeam}' not found.`);
+      console.error(`Team with code_team '${code}' not found.`);
     }
-  }, [codeTeam, teams]);
+  }, [code, teams]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
