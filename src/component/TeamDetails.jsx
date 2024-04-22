@@ -6,13 +6,13 @@ const TeamMembers = () => {
   const { code } = useParams(); 
   const { members, teams } = useContext(MyContext); 
   const [teamMembers, setTeamMembers] = useState([]);
-console.log(code)
+
   useEffect(() => {
     const teamId = teams.find(team => team.team_code === code)?.id;
-console.log(teamId)
+
     const filteredMembers = members.filter(member => member.team_id === teamId);
     setTeamMembers(filteredMembers);
-    console.log(filteredMembers)
+
   }, [code, members, teams]);
 
   return (

@@ -1,40 +1,26 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import { Calendar, dayjsLocalizer } from "react-big-calendar";
 import dayjs from "dayjs";
 import "react-big-calendar/lib/css/react-big-calendar.css";
+import { MyContext } from "../component/Context";
 import { apiPath } from "../api";
 
 function MyCalendar() {
   const localizer = dayjsLocalizer(dayjs);
+  const { teams, members } = useContext(MyContext);
   const [events, setEvents] = useState([]);
-
-  const fetchMembers = async (teamId) => {
-    try {
-      const responseMembers = await fetch(apiPath(`/members`));
-      const membersData = await responseMembers.json();
-
-      const teamMembers = membersData.filter(
-        (member) => member.team_id === teamId
-      );
-
-      return teamMembers;
-    } catch (error) {
-      throw new Error("Error fetching members:", error);
-    }
-  };
+  const [selectedEvent, setSelectedEvent] = useState(null);
 
   useEffect(() => {
+    const teamCode = window.location.pathname.split("/").pop();
+    const team = teams.find((team) => team.team_code === teamCode);
+
+    if (!team) return;
+
+    const teamMembers = members.filter((member) => member.team_id === team.id);
+
     const fetchEvents = async () => {
       try {
-        const teamCode = window.location.pathname.split("/").pop();
-        const responseTeams = await fetch(apiPath(`/teams`));
-        const teamsData = await responseTeams.json();
-        const team = teamsData.find((team) => team.team_code === teamCode);
-
-        if (!team) return;
-
-        const teamMembers = await fetchMembers(team.id);
-
         const responseEvents = await fetch(apiPath(`/timeoff`));
         const eventsData = await responseEvents.json();
         const teamMemberIds = teamMembers.map((member) => member.id);
@@ -46,15 +32,12 @@ function MyCalendar() {
           const member = teamMembers.find(
             (member) => member.id === event.member_id
           );
-          const title = member
-            ? `${member.first_name} ${member.last_name}: ${event.description}`
-            : event.description;
-          const backgroundColor = member ? member.color : "#000000";
           return {
             start: new Date(event.start_date),
             end: new Date(event.end_date),
-            title: title,
-            backgroundColor: backgroundColor,
+            title: member ? `${member.first_name} ${member.last_name}` : "",
+            description: event.description,
+            backgroundColor: member ? member.color : "#000000",
           };
         });
 
@@ -65,13 +48,18 @@ function MyCalendar() {
     };
 
     fetchEvents();
-  }, []);
+  }, [teams, members]);
+
+  const handleEventClick = (event) => {
+    setSelectedEvent(event);
+  };
 
   return (
     <div>
       <Calendar
         localizer={localizer}
         events={events}
+        onSelectEvent={handleEventClick}
         eventPropGetter={(event, start, end, isSelected) => {
           const style = {
             borderRadius: "0px",
@@ -90,6 +78,12 @@ function MyCalendar() {
           width: 500,
         }}
       />
+      {selectedEvent && (
+        <div>
+          <h3>{selectedEvent.title}</h3>
+          <p>{selectedEvent.description}</p>
+        </div>
+      )}
     </div>
   );
 }

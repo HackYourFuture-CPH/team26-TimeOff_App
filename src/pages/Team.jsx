@@ -1,3 +1,4 @@
+import MyCalendar from '../component/Calendar'
 import CreateMember from '../component/CreateMember'
 import TeamDetails from '../component/TeamDetails'
 
@@ -6,6 +7,7 @@ return(
   <>
 <TeamDetails></TeamDetails>
 <CreateMember></CreateMember>
+<MyCalendar></MyCalendar>
 </>
 )}
 
