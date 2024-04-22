@@ -40,4 +40,21 @@ router.get("/:id", async (request, response) => {
   }
 });
 
+
+router.delete("/", async (request, response) => {
+  const { id } = request.body;
+  try {
+    const deletedMember = await db("members").where({ id }).del();
+    if (deletedMember) {
+      response.json({ message: "Member deleted successfully" });
+    } else {
+      response.status(404).json({ error: "Member not found" });
+    }
+  } catch (error) {
+    console.error(error);
+    response.status(500).json({ error: "Failed to delete the member" });
+  }
+});
+
+
 module.exports = router;

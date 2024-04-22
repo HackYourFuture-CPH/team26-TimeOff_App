@@ -8,8 +8,6 @@ function CreateMember() {
   const contextData = useContext(MyContext);
   const teams = contextData.teams;
 
-  console.log(code)
-
   const [teamId, setTeamId] = useState(null);
   const [memberData, setMemberData] = useState({
     first_name: "",
