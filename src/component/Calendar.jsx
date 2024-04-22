@@ -72,7 +72,6 @@ function MyCalendar() {
       <Calendar
         localizer={localizer}
         events={events}
-        views={["month"]}
         eventPropGetter={(event, start, end, isSelected) => {
           const style = {
             borderRadius: "0px",

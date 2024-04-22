@@ -1,52 +1,30 @@
-import React, { useState, useEffect } from 'react';
-import '../index.css';
-import MembersList from './MembersList';
-import CreateMember from './CreateMember';
+import { useContext, useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
+import { MyContext } from '../component/Context';
 
-// use this format if fetching
-import { apiPath } from '../api';
-// fetch(apiPath('/teams'))
-
-
-const TeamDetails = ({ teams }) => {
-  const [members, setMembers] = useState([]);
-  const [timeOffs, setTimeOffs] = useState([]);
-
+const TeamMembers = () => {
+  const { code } = useParams(); 
+  const { members, teams } = useContext(MyContext); 
+  const [teamMembers, setTeamMembers] = useState([]);
+console.log(code)
   useEffect(() => {
-    if (teams) {
-      fetchTeamMembers();
-      fetchTimeOffs();
-    }
-  }, [teams]);
+    const teamId = teams.find(team => team.team_code === code)?.id;
+console.log(teamId)
+    const filteredMembers = members.filter(member => member.team_id === teamId);
+    setTeamMembers(filteredMembers);
+    console.log(filteredMembers)
+  }, [code, members, teams]);
 
-  const fetchTeamMembers = async () => {
-    try {
-      const response = await fetch(apiPath(`/teams/${team.id}/members`));
-      if (!response.ok) {
-        throw new Error('Failed to fetch team members');
-      }
-      const data = await response.json();
-      setMembers(data);
-    } catch (error) {
-      console.error('Error fetching team members:', error);
-    }
-  };
-
-  
   return (
     <div>
-      {teams && (
-        <>
-          <h2>{teams.team_name}</h2>
-        </>
-      )}
-      <h3>Team Members</h3>
-      <MembersList members={members} />
-      <CreateMember onAddMember={handleAddMember} />
-      <h3>Time Off Requests</h3>
-
+      <h2>Team Members</h2>
+      <ul>
+        {teamMembers.map(member => (
+          <li key={member.id}>{member.first_name} {member.last_name}</li>
+        ))}
+      </ul>
     </div>
   );
 };
 
-export default TeamDetails;
+export default TeamMembers;
