@@ -1,56 +1,50 @@
 # TimeOff_App
-## When are my coworkers going on vacation?
 
 TimeOff_App is a web application designed to simplify the process of managing vacations and time off for teams within a company. It provides a user-friendly interface for creating teams, managing team members, and tracking their time off.
 
 ## Development Status
 
-Currently, TimeOff_App is in the early stages of development. The primary functionalities implemented so far include:
+Currently, TimeOff_App is in an advanced stage of development. The following functions are operational:
 
-- **Authentication Page:** Users can access the authentication page, which serves as the entry point to the application.
+### Index Page:
+- **Team Authentication:** Utilizing a unique code per team, team validation is enabled to grant access to the main functionalities of the app.
   
-- **Team Creation:** Users can create a new team, which is automatically assigned a unique secret code.
+- **Team Creation:** Easily create a new team through the header button on the index page. Clicking on it generates a new validation key.
 
-- **Code Validation:** The application validates the secret code entered by users to grant access to the corresponding team.
+- The index page also features a carousel of testimonials, an app overview section, and a pricing section.
 
-Please note that additional features and functionalities are planned for future development.
+Upon accessing the dashboard using the team code, the following functions are available:
 
-## User Flow
-
-The typical user flow within the application involves the following steps:
-
-1. **Accessing the Index Page:** Users navigate to the index page of the application.
-
-2. **Authentication:** Users can authenticate themselves using their unique secret code to access their team's information.
-
-3. **Creating a New Team:** Users have the option to create a new team. Upon creation, each team is assigned a secret code for authentication.
-
-4. **Managing Team Members:** Once inside a team, users can add and manage team members. Each team member can have a first name, last name, and optional color.
-
-5. **Tracking Time Off:** Users can specify time off for team members, including a date range and optional description.
-
-## Out of Scope (or For Later)
-
-User authentication is intentionally left out of the initial development scope. Instead, the unique secret team code serves as an authentication mechanism. 
-
-## Open Questions
-
-While the core functionalities have been implemented, there are still some open questions and considerations for future development:
-
-- **Code Generation:** Determining the best method for generating secret, unique codes for each team.
+### Dashboard:
+- **Team Member Visualization**
+- **Calendar:** Displays assigned time off for team members, identified with previously chosen colors during member creation.
   
-- **Displaying Vacation Time:** How to effectively present team members' vacation time within the application.
+- **Member Creation:** Fill out a form to create a new team member, assigning a color and the number of days off for that member.
+  
+- **Member Deletion:** Delete a selected member from the team via a dropdown menu. Confirmation is required before deletion.
+  
+- **Add Time Off:** Add a new entry to the calendar, specifying start and end dates of the event, along with a reason.
+  
+- **Delete Time Off:** Remove an event from the calendar.
+
+### Additional App Information:
+
+- Data is hosted on an external server, and data updates are generated on the database.
 
 ## Getting Started
 
-To get started with TimeOff_App, follow these steps:
+To start using the app:
 
-1. Clone the repository to your local machine.
-2. Install any necessary dependencies.
-3. Run the application locally to explore the current functionalities.
+1. Run the backend and frontend separately in different terminals using:
+
+npm start-server
+npm start-frontend
+
+
+## Deployment
+
+A deployed version is available at the following link: [TimeOff_App Deployment](https://time-off-ykex.vercel.app)
 
 ## Contributing
 
 Contributions to TimeOff_App are welcome! If you have any ideas for improvements, new features, or bug fixes, feel free to submit a pull request or open an issue on the GitHub repository.
-
-
