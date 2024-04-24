@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { MyContext } from "../component/Context";
+import '../styles/teamDetails.css'
 
 const TeamMembers = () => {
   const { code } = useParams();
@@ -17,7 +18,7 @@ const TeamMembers = () => {
   }, [code, members, teams]);
 
   return (
-    <div>
+    <div className="Team-Member-container">
       <h2>Team Members</h2>
       <ul>
         {teamMembers.map((member) => (

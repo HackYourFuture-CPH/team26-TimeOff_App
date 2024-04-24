@@ -56,7 +56,7 @@ const Home = () => {
       </section>
 
       <section className="testimonials-container">
-      <h2 className="testim-header">Meet Our Team</h2>
+      <h2 className="testim-header">Testimonials</h2>
       <Testimonials />
       </section>
       <section><About /></section>
