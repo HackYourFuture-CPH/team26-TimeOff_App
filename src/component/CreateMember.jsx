@@ -1,29 +1,33 @@
-import React, { useState } from "react";
-import '../index.css';
-// use this format if fetching
+import { useState, useEffect, useContext } from "react";
+import { useParams } from "react-router-dom";
 import { apiPath } from '../api';
-// fetch(apiPath('/teams'))
+import { TeamDataContext } from '../component/Context';
 
+function CreateMember() {
+  const { code } = useParams(); 
+  const contextData = useContext(TeamDataContext);
+  const teams = contextData.teams;
 
+  const [teamId, setTeamId] = useState(null);
+  const [memberData, setMemberData] = useState({
+    first_name: "",
+    last_name: "",
+    email: "",
+    color: "#000000",
+    allowed_dayoff: 0, 
+  });
 
-function CreateMember({teamsDatabase }) {
-  const [name, setName] = useState({ firstName: "", lastName: "" });
-  const [email, setEmail] = useState("");
-  const [color, setColor] = useState("#000000"); 
-  const [selectedTeam, setSelectedTeam] = useState(""); 
-  const [isFormVisible, setIsFormVisible] = useState(false); 
+  useEffect(() => {
+    const team = teams.find(team => team.team_code === code);
+    if (team) {
+      setTeamId(team.id);
+    } else {
+      console.error(`Team with code_team '${code}' not found.`);
+    }
+  }, [code, teams]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
-    const memberData = {
-      first_name: name.firstName,
-      last_name: name.lastName,
-      email: email,
-      color: color,
-      team_id: selectedTeam,
-      id: Math.floor(Math.random() * 1000000) + 1,
-    };
 
     try {
       const response = await fetch(apiPath('/members'), {
@@ -31,17 +35,16 @@ function CreateMember({teamsDatabase }) {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(memberData),
+        body: JSON.stringify({
+          ...memberData,
+          team_id: teamId,
+          assigned_dayoff: 0, 
+        }),
       });
 
       if (response.ok) {
         alert("Member created successfully!");
-        setName({ firstName: "", lastName: "" });
-        setEmail("");
-        setColor("#000000");
-        setSelectedTeam("");
-        setIsFormVisible(false); 
-
+        setMemberData({ first_name: "", last_name: "", email: "", color: "#000000", allowed_dayoff: 0 });
       } else {
         const data = await response.json();
         alert(data.error || "Failed to create member. Please try again.");
@@ -52,60 +55,64 @@ function CreateMember({teamsDatabase }) {
     }
   };
 
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setMemberData(prevState => ({
+      ...prevState,
+      [name]: value,
+    }));
+  };
+
   return (
     <div>
-      {!isFormVisible && (
-        <button className="create-button" onClick={() => setIsFormVisible(true)}>Create Member</button>
-      )}
-      {isFormVisible && (
-        <form onSubmit={handleSubmit} className="member-form">
-          <div>
-            <label>First Name:</label>
-            <input
-              type="text"
-              value={name.firstName}
-              onChange={(e) => setName({ ...name, firstName: e.target.value })}
-            />
-          </div>
-          <div>
-            <label>Last Name:</label>
-            <input
-              type="text"
-              value={name.lastName}
-              onChange={(e) => setName({ ...name, lastName: e.target.value })}
-            />
-          </div>
-          <div>
-            <label>Email:</label>
-            <input
-              type="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-            />
-          </div>
-          <div>
-            <label>Color:</label>
-            <input
-              type="color"
-              value={color}
-              onChange={(e) => setColor(e.target.value)}
-            />
-          </div>
-          <div>
-            <label>Team:</label>
-            <select
-              value={selectedTeam}
-              onChange={(e) => setSelectedTeam(e.target.value)}
-            >
-              <option value="">Select Team</option>
-              {teamsDatabase.map((team) => (
-                <option key={team.id} value={team.id}>{team.team_name}</option>
-              ))}
-            </select>
-          </div>
-          <button type="submit">Create Member</button>
-        </form>
-      )}
+      <form onSubmit={handleSubmit} className="member-form">
+        <div>
+          <label>First Name:</label>
+          <input
+            type="text"
+            name="first_name"
+            value={memberData.first_name}
+            onChange={handleChange}
+          />
+        </div>
+        <div>
+          <label>Last Name:</label>
+          <input
+            type="text"
+            name="last_name"
+            value={memberData.last_name}
+            onChange={handleChange}
+          />
+        </div>
+        <div>
+          <label>Email:</label>
+          <input
+            type="email"
+            name="email"
+            value={memberData.email}
+            onChange={handleChange}
+          />
+        </div>
+        <div>
+          <label>Color:</label>
+          <input
+            type="color"
+            name="color"
+            value={memberData.color}
+            onChange={handleChange}
+          />
+        </div>
+        <div>
+          <label>Allowed Dayoff:</label>
+          <input
+            type="number"
+            name="allowed_dayoff"
+            value={memberData.allowed_dayoff}
+            onChange={handleChange}
+          />
+        </div>
+        <button type="submit">Create Member</button>
+      </form>
     </div>
   );
 }
