@@ -1,9 +1,9 @@
 import { useState, useContext } from "react";
 import { apiPath } from "../api";
-import { MyContext } from "../component/Context";
+import { TeamDataContext } from "../component/Context";
 
 function CreateTimeoff() {
-  const { members, teams } = useContext(MyContext);
+  const { members, teams } = useContext(TeamDataContext);
   const [startDate, setStartDate] = useState("");
   const [endDate, setEndDate] = useState("");
   const [description, setDescription] = useState("");

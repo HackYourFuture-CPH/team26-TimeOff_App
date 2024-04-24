@@ -7,12 +7,11 @@ import TeamDetails from '../component/TeamDetails'
 function Team(){
 return(
   <>
-<TeamDetails></TeamDetails>
-<CreateMember></CreateMember>
-<DeleteTeam></DeleteTeam>
-<MyCalendar></MyCalendar>
-<CreateTimeoff></CreateTimeoff>
-
+<TeamDetails />
+<CreateMember />
+<DeleteTeam />
+<MyCalendar />
+<CreateTimeoff />
 </>
 )}
 

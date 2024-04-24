@@ -1,11 +1,11 @@
 import { useState, useEffect, useContext } from "react";
 import { useParams } from "react-router-dom";
 import { apiPath } from '../api';
-import { MyContext } from '../component/Context';
+import { TeamDataContext } from '../component/Context';
 
 function CreateMember() {
   const { code } = useParams(); 
-  const contextData = useContext(MyContext);
+  const contextData = useContext(TeamDataContext);
   const teams = contextData.teams;
 
   const [teamId, setTeamId] = useState(null);
