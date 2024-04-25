@@ -31,7 +31,7 @@
   },
   "scripts": {
     "start-server": "node src/backend/server.js",
-    "start-frontend": "set PORT=3000 && react-scripts start",
+    "start-frontend": "react-scripts start",
     "start": "npm run start-server & npm run start-frontend",
     "build": "react-scripts build",
     "test": "react-scripts test",

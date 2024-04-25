@@ -1,61 +1,60 @@
 .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px;
-    background-color: #b5e6f9;
-    color: rgb(0, 0, 0);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: #b5e6f9;
+  color: rgb(0, 0, 0);
 }
 
 .logo {
-    padding-left: 4em;
-    height: 2em;
+  padding-left: 4em;
+  height: 2em;
 }
 
 .navbar-center {
-    padding-left: 18em;
+  padding-left: 18em;
 }
 
 .navbar-center a {
-    text-decoration: none;
-    color: #000000;
+  text-decoration: none;
+  color: #000000;
 }
 
 .navbar-text {
-    margin: 1em;
-    font-family: 'Poppins';
-    font-size: 1.1em;
+  margin: 1em;
+  font-family: 'Poppins';
+  font-size: 1.1em;
 }
 
 .container-create-team {
-    padding-left: 12em;
+  padding-left: 12em;
 }
 
 .button-create-team {
-    height: 2em;
-    width: 10em;
-    background-color: #EF8038;
-    color: white;
-    border-radius: 15px;
-    border: none;
-    text-decoration: none;
-    font-weight: 600;
-    cursor: pointer;
+  height: 2em;
+  width: 10em;
+  background-color: #EF8038;
+  color: white;
+  border-radius: 15px;
+  border: none;
+  text-decoration: none;
+  font-weight: 600;
+  cursor: pointer;
 }
 
 .toggle-icon {
-    width: 50px;
-    cursor: pointer;
-    padding-right: 2em;
+  width: 50px;
+  cursor: pointer;
+  padding-right: 2em;
 }
 
-/* For dark Mode */
 .dark .navbar{
-    background: #000;
-    color: #fff;
-    border: 1px solid #EF8038;
+  background: #000;
+  color: #fff;
+  border: 1px solid #EF8038;
 }
 
 .dark ul li a, .dark .navbar-text {
-    color: #ffffff;
+  color: #ffffff;
 }

@@ -10,23 +10,22 @@ function Team(){
 return(
   <>
   <section className="welcome-team">
-    {/* <h1>Welcom Back, {team.team_name}</h1> */}
-    <MembersList></MembersList>
+    <MembersList/>
   </section>
   <div className="container-section">
     <section className="left-section">
       <section className="TeamMember">
-        <TeamMembers></TeamMembers>
+        <TeamMembers/>
       </section>
       <section className="MyCalendar">
-        <MyCalendar></MyCalendar>
+        <MyCalendar/>
       </section>
     </section>
     <section className="right-section">
       <section className="CreateMember">
-        <CreateMember></CreateMember>
-        <DeleteTeam></DeleteTeam>
-        <CreateTimeoff></CreateTimeoff>
+        <CreateMember/>
+        <DeleteTeam/>
+        <CreateTimeoff/>
       </section>
       <section className="DayOff">
         <h3>Day Off Rank</h3>

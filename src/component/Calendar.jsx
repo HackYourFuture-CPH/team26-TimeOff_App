@@ -2,13 +2,13 @@ import { useEffect, useState, useContext } from "react";
 import { Calendar, dayjsLocalizer } from "react-big-calendar";
 import dayjs from "dayjs";
 import "react-big-calendar/lib/css/react-big-calendar.css";
-import { MyContext } from "../component/Context";
+import { TeamDataContext } from "../component/Context";
 import { apiPath } from "../api";
 import '../styles/calender.css'
 
 function MyCalendar() {
   const localizer = dayjsLocalizer(dayjs);
-  const { teams, members } = useContext(MyContext);
+  const { teams, members } = useContext(TeamDataContext);
   const [events, setEvents] = useState([]);
   const [selectedEvent, setSelectedEvent] = useState(null);
 
