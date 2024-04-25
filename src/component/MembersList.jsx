@@ -49,8 +49,12 @@ const MembersList = ({teamId}) => {
     <div className="containerList">
       <div className="titleContainer">
         <section>
-          <h1>Welcome Back, <span>{team.team_name} </span></h1> 
-          <h3>Here is a list of your team members!</h3>
+        {team && (
+          <>
+            <h1>Welcome Back, <span>{team.team_name}</span></h1> 
+            <h3>Here is a list of your team members!</h3>
+          </>
+        )}
         </section>
         <img src="/logo.svg" alt="Logo" className="logo" />
       </div>
