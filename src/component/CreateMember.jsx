@@ -2,6 +2,7 @@ import { useState, useEffect, useContext } from "react";
 import { useParams } from "react-router-dom";
 import { apiPath } from '../api';
 import { TeamDataContext } from '../component/Context';
+import '../styles/createMember.css'
 
 function CreateMember() {
   const { code } = useParams(); 

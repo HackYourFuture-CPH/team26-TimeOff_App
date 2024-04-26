@@ -4,6 +4,7 @@ import dayjs from "dayjs";
 import "react-big-calendar/lib/css/react-big-calendar.css";
 import { TeamDataContext } from "../component/Context";
 import { apiPath } from "../api";
+import '../styles/calender.css'
 
 function MyCalendar() {
   const localizer = dayjsLocalizer(dayjs);
@@ -55,7 +56,7 @@ function MyCalendar() {
   };
 
   return (
-    <div>
+    <div className="calender-container">
       <Calendar
         localizer={localizer}
         events={events}

@@ -1,26 +1,26 @@
 .footer {
-    background-color: #b5e6f9;
+  background-color: #b5e6f9;
 }
 
 .footer-section {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0;
-    margin: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0;
+  margin: 0;
 }
 
 .logo-col {
-    padding: 0 4em;
+  padding: 0 4em;
 }
 
 .logo-col .logo {
-    height: 2em;
+  height: 2em;
 }
 
 .services-col, .contact-col {
-    padding-left: 6em;
-    padding-right: 5em;
+  padding-left: 6em;
+  padding-right: 5em;
 }
 
 .social-col {
@@ -29,32 +29,32 @@
 }
 
 .services-col h3, .contact-col h3 {
-    padding: 0;
-    margin-top: 0;
-    margin-bottom: 20px;
-    text-align: left;
-    font-family: 'Poppins';
+  padding: 0;
+  margin-top: 0;
+  margin-bottom: 20px;
+  text-align: left;
+  font-family: 'Poppins';
 }
 
 .social-col h3 {
-    padding: 0;
-    margin-top: 30px;
-    margin-bottom: 0;
-    text-align: left;
-    font-family: 'Poppins';
+  padding: 0;
+  margin-top: 30px;
+  margin-bottom: 0;
+  text-align: left;
+  font-family: 'Poppins';
 }
 
 .services-col ul, .contact-col ul, .social-col ul {
-    list-style: none;
-    margin: 0;
-    text-align: left;
-    color: #000000; 
-    padding: 0;
+  list-style: none;
+  margin: 0;
+  text-align: left;
+  color: #000000; 
+  padding: 0;
 }
 
 .services-col ul li, .contact-col ul li, .social-col ul li {
-    margin: 8px 0;
-    font-family: 'Poppins';
+  margin: 8px 0;
+  font-family: 'Poppins';
 }
 
 .social-icons {
@@ -63,33 +63,33 @@
 }
 
 .separator {
-    border-top: 1px solid #636262;
-    margin: 0;
+  border-top: 1px solid #636262;
+  margin: 0;
 }
 
 .copyright {
-    text-align: left;
-    font-family: 'Poppins';
+  text-align: left;
+  font-family: 'Poppins';
 }
 
 .terms {
-    flex: 2;
-    text-align: right;
-    font-family: 'Poppins';
+  flex: 2;
+  text-align: right;
+  font-family: 'Poppins';
 }
 
 .dark .footer {
-    background-color: #000000;
+  background-color: #000000;
 }
 
 .dark .services-col h3, .dark .contact-col h3,.dark .social-col h3, .dark .copyright, .dark .terms {
-    color: #EF8038;
+  color: #EF8038;
 }
 
 .dark .services-col ul, .dark .contact-col ul, .dark .social-col ul {
-    color: #ffffff;
+  color: #ffffff;
 }
 
 .dark .separator {
-    border-top: 1px solid #EF8038;
+  border-top: 1px solid #EF8038;
 }

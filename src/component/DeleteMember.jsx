@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from 'react';
 import { apiPath } from '../api';
 import { TeamDataContext } from '../component/Context';
 import { useParams } from 'react-router-dom';
+import '../styles/deleteMember.css';
 
 const DeleteMember = () => {
   const { members, teams } = useContext(TeamDataContext);
@@ -65,9 +66,9 @@ const DeleteMember = () => {
   };
 
   return (
-    <div>
+    <div className="deleteMember-container">
       <label htmlFor="memberSelect">Select Member:</label>
-      <select id="memberSelect" value={selectedMember} onChange={handleMemberChange}>
+      <select className='deleteMember-select' id="memberSelect" value={selectedMember} onChange={handleMemberChange}>
         <option value="">Select a member</option>
         {filteredMembers.map(member => (
           <option key={member.id} value={member.id}>{`${member.first_name} ${member.last_name}`}</option>

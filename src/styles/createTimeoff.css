@@ -1,0 +1,64 @@
+.createTimeOff-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.book-timeoff {
+  width: 10em;
+  background-color: #441eee;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-family: 'Poppins';
+  padding: 6px;
+  margin-top: 15px;
+}
+
+.book-timeoff:hover {
+  background-color: #181660;
+}
+
+.createTimeoff-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 300px;
+  margin-top: 15px;
+}
+
+.createTimeoff-form label {
+  margin-bottom: 5px;
+  font-family: 'Poppins';
+  display: flex;
+}
+
+.createTimeoff-form input[type="date"],
+.createTimeoff-form input[type="text"],
+.createTimeoff-form select {
+  width: 25em;
+  padding: 8px;
+  border: 1px solid #f89451;
+  border-radius: 10px;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+  font-family: 'Poppins';
+}
+
+.createTimeoff-form button[type="submit"] {
+  width: 10em;
+  background-color: #441eee;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-family: 'Poppins';
+  padding: 6px;
+  margin-top: 15px;
+}
+
+.createTimeoff-form button[type="submit"]:hover {
+  background-color:  #181660;
+}

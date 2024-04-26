@@ -1,0 +1,26 @@
+.Team-Member-container {
+  padding: 0;
+  margin: 0;
+}
+
+.Team-Member-container h2{
+  font-family: 'Poppins';
+  margin: 0;
+  padding: 4px 0;
+}
+
+.Team-Member-container ul{
+  font-family: 'Poppins';
+  margin: 0;
+  list-style-type: none;
+  padding: 0;
+}
+
+.Team-Member-container ul li{
+  text-decoration: none;
+  padding: 4px;
+}
+
+.Team-Member-container ul li::marker{
+  text-decoration: none;
+}

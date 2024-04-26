@@ -69,6 +69,7 @@
   border: none;
   text-decoration: none;
   font-weight: 600;
+  cursor: pointer;
 }
 
 .testimonials-container{
@@ -88,7 +89,6 @@
   font-weight: 800;
 }
 
-/* Dark theme color */
 .home-container.dark {
   background: #000000;
 }

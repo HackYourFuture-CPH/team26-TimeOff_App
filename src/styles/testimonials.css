@@ -1,6 +1,6 @@
 .carousel-root {
   display: flex;
-  width: 30em;
+  width: 40em;
   margin: auto;
   margin-top: 3%;
 }
@@ -18,7 +18,7 @@
 
 .carousel .slide img {
   width: 139px;
-  border-radius: 50%;
+  border-radius: 70%;
 }
 
 .myCarousel {
