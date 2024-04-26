@@ -9,6 +9,11 @@
   padding-bottom: 5px;
 }
 
+.titleContainer-heading{
+  margin: 0;
+  padding: 0;
+}
+
 .titleContainer h1, h3 {
   font-family: 'Poppins';
   padding: 6px;
