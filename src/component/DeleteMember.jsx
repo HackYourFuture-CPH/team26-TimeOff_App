@@ -5,7 +5,7 @@ import { useParams } from 'react-router-dom';
 import '../styles/deleteMember.css';
 
 const DeleteMember = () => {
-  const { members, teams } = useContext(TeamDataContext);
+  const { members, teams, setMembers } = useContext(TeamDataContext);
   const [selectedMember, setSelectedMember] = useState('');
   const [filteredMembers, setFilteredMembers] = useState([]);
   const { code } = useParams(); 
@@ -48,9 +48,10 @@ const DeleteMember = () => {
         });
 
         if (response.ok) {
-          const updatedMembers = filteredMembers.filter(member => member.id !== selectedMember);
+          const updatedMembers = filteredMembers.filter(member => member.id !== Number(selectedMember));
           setFilteredMembers(updatedMembers);
           alert('Member deleted successfully');
+          setMembers(updatedMembers)
         } else {
           alert('Failed to delete member. Please try again.');
         }

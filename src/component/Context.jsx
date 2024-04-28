@@ -7,9 +7,13 @@ const TeamDataProvider = ({ children }) => {
   const [teams, setTeams] = useState([]);
   const [members, setMembers] = useState([]);
   const [timeOff, setTimeOff] = useState([]);
+  const [dataIsOld, setDataIsOld] = useState(false);
 
-  useEffect(() => {
-    const fetchData = async () => {
+  const refreshTeamData = () => {
+    setDataIsOld(true)
+  }
+
+  const fetchData = async () => {
       try {
         const [teamsResponse, membersResponse, timeOffResponse] = await Promise.all([
           fetch(apiPath('/teams')),
@@ -28,12 +32,20 @@ const TeamDataProvider = ({ children }) => {
         console.error('Error fetching data:', error);
       }
     };
-    
+
+  useEffect(() => { 
     fetchData();
   }, []); 
 
+  useEffect(() => {
+    if(dataIsOld) {
+      fetchData();
+      setDataIsOld(false)
+    }
+  }, [dataIsOld]); 
+
   return (
-    <TeamDataContext.Provider value={{ teams, members, timeOff }}>
+    <TeamDataContext.Provider value={{ teams, members, timeOff, setMembers, refreshTeamData }}>
       {children}
     </TeamDataContext.Provider>
   );

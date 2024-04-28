@@ -8,7 +8,7 @@ import '../styles/calender.css'
 
 function MyCalendar() {
   const localizer = dayjsLocalizer(dayjs);
-  const { teams, members } = useContext(TeamDataContext);
+  const { teams, members, refreshTeamData } = useContext(TeamDataContext);
   const [events, setEvents] = useState([]);
   const [selectedEvent, setSelectedEvent] = useState(null);
 
@@ -43,6 +43,7 @@ function MyCalendar() {
         });
 
         setEvents(formattedEvents);
+        refreshTeamData()
       } catch (error) {
         console.error("Error fetching events:", error);
       }
