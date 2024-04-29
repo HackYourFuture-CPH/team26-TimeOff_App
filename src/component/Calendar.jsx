@@ -5,13 +5,14 @@ import "react-big-calendar/lib/css/react-big-calendar.css";
 import { TeamDataContext } from "../component/Context";
 import { apiPath } from "../api";
 import "../styles/calender.css";
-import '../styles/deleteTimeoff.css';
+import "../styles/deleteTimeoff.css";
 
 function MyCalendar() {
   const localizer = dayjsLocalizer(dayjs);
   const { teams, members, refreshTeamData } = useContext(TeamDataContext);
   const [events, setEvents] = useState([]);
   const [selectedEvent, setSelectedEvent] = useState(null);
+  const [showDeleteConfirmation, setShowDeleteConfirmation] = useState(false);
 
   useEffect(() => {
     const teamCode = window.location.pathname.split("/").pop();
@@ -59,6 +60,10 @@ function MyCalendar() {
   };
 
   const handleDeleteEvent = async () => {
+    setShowDeleteConfirmation(true);
+  };
+
+  const confirmDelete = async () => {
     try {
       await fetch(apiPath(`/timeoff`), {
         method: "DELETE",
@@ -69,9 +74,14 @@ function MyCalendar() {
       });
       setEvents(events.filter((event) => event.id !== selectedEvent.id));
       setSelectedEvent(null);
+      setShowDeleteConfirmation(false);
     } catch (error) {
       console.error("Error deleting event:", error);
     }
+  };
+
+  const cancelDelete = () => {
+    setShowDeleteConfirmation(false);
   };
 
   return (
@@ -103,6 +113,13 @@ function MyCalendar() {
           <h3>{selectedEvent.title}</h3>
           <p>{selectedEvent.description}</p>
           <button onClick={handleDeleteEvent}>Delete Event</button>
+          {showDeleteConfirmation && (
+            <div className="delete-confirmation">
+              <p>Are you sure you want to delete this event?</p>
+              <button onClick={confirmDelete}>Yes</button>
+              <button onClick={cancelDelete}>No</button>
+            </div>
+          )}
         </div>
       )}
     </div>
