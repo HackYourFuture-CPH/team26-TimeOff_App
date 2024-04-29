@@ -9,6 +9,7 @@
 
 .container-section {
   display: flex;
+  height: 69em;
 }
 
 .left-section {

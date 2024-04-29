@@ -27,9 +27,7 @@ return(
         <DeleteTeam/>
         <CreateTimeoff/>
       </section>
-      <section className="DayOff">
-        <h3>Day Off Rank</h3>
-      </section>
+     
     </section>
   </div>
 
