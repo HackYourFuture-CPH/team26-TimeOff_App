@@ -156,10 +156,9 @@ function CreateTimeoff() {
               <Button
                 onClick={() => setOpenDialog(false)}
                 sx={{
-                  color: "#ff480069 !important",
                   "&:hover": {
                     backgroundColor: "#ff480069",
-                    color: "#f5f5f5 !important",
+                    color: "#f5f5f5",
                   },
                 }}
               >

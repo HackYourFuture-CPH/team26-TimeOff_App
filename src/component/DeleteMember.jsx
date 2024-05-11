@@ -141,8 +141,10 @@ const DeleteMember = () => {
           <Button
             onClick={handleCloseSelectDialog}
             sx={{
+              fontFamily: "Fira Sans, sans-serif",
+              color: "#f44336",
               "&:hover": {
-                backgroundColor: "#83c5ab;",
+                backgroundColor: "#ff480069",
                 color: "#f5f5f5",
               },
             }}
@@ -152,11 +154,11 @@ const DeleteMember = () => {
           <Button
             onClick={handleDeleteMember}
             sx={{
-              backgroundColor: "#fc5858 !important",
+              backgroundColor: "#d32f2f !important",
               color: "#f5f5f5 !important",
 
               "&:hover": {
-                backgroundColor: "#d32f2f !important",
+                backgroundColor: "#fc5858 !important",
                 color: "#f5f5f5",
               },
             }}
